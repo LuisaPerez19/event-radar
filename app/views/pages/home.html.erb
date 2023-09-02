@@ -2,8 +2,20 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);">
   <div class="container">
+     <div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
     <h1>Welcome to <strong>Event Radar</strong>!</h1>
     <p>Find an event that match you!</p>
+      <%= form_tag events_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find an event"
+        %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
   </div>
 </div>
 
