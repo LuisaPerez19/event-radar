@@ -5,3 +5,68 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts 'Deleting existing records...'
+
+# Review.delete_all
+# Booking.delete_all
+Event.delete_all
+User.delete_all
+
+puts 'Seeding..'
+
+user1 = User.create!(
+  email: "luisa.perez@myevent.com",
+  password: "123456",
+  password_confirmation: "123456"
+)
+
+user2 = User.create!(
+  email: "Aqil@myevent.com",
+  password: "123456",
+  password_confirmation: "123456"
+)
+
+user3 = User.create!(
+  email: "Aaron@myevent.com",
+  password: "123456",
+  password_confirmation: "123456"
+)
+
+user4 = User.create!(
+  email: "Zina@myevent.com",
+  password: "123456",
+  password_confirmation: "123456"
+)
+
+event1 = Event.create!(
+  name: "Indie Vibes Unplugged",
+  description: "Dive into an intimate evening of acoustic melodies at the Indie Vibes Unplugged music event. Set in a cozy, candlelit café, this event features talented singer-songwriters strumming their guitars and pouring their hearts out in soul-stirring performances. Expect a night of raw emotions and captivating lyrics, where the power of storytelling takes center stage",
+  price: 12,
+  photo_url: "Indie Vibes.jpg",
+  category: "music",
+  location:"278 St Paul's Rd, London N1 2LH",
+  user: user1
+)
+
+event2 = Event.create!(
+  name: "Jazz on the Rooftop",
+  description: "Elevate your senses at Jazz on the Rooftop, where the city skyline becomes the backdrop to an evening of smooth jazz and sophistication. Set atop a stylish skyscraper, this event offers live jazz bands, artisanal cocktails, and breathtaking views. Immerse yourself in the timeless tunes that evoke the golden era of jazz while savoring the city's ambiance",
+  price: 10,
+  category: "music",
+  photo_url: "jazz.jpg",
+  location: "Grand Buildings, 31-32 Northumberland Ave, London WC2N 5BW",
+  user: user1
+)
+
+event3 = Event.create!(
+  name: "Rockin' Retro Revival",
+  description: "Step back in time and relive the glory days of rock 'n' roll at the Rockin Retro Revival. This nostalgic event transports you to a vintage-style venue adorned with retro decor and classic rock memorabilia. Enjoy electrifying live performances by tribute bands, capturing the essence of legendary rock icons from the 60s and 70s, and let the music transport you to a bygone era of rebellion and rockstar glamour",
+  price: 10,
+  category: "music",
+  photo_url: "rock.jpg",
+  location:"4 St James's Mkt, St. James's, London SW1Y 4AH",
+  user: user1
+)
+
+puts "finished"
