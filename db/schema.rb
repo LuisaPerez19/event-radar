@@ -57,6 +57,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_130218) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_reviews_on_event_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,4 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_130218) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "events", "users"
+  add_foreign_key "reviews", "events"
+  add_foreign_key "reviews", "users"
 end
