@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   before_action :set_event, only: [:new, :create]
 
   def index
-
     @user = current_user
     @bookings = @user.bookings
   end
