@@ -1,0 +1,22 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new event</h3>
+            <%= simple_form_for @event do |f| %>
+
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.input :category, collection: Event::CATEGORIES %>
+            <%= f.input :location %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            <%= f.submit class: "btn btn-primary mt-4 create" %>
+            <%= link_to 'Back to Events', events_path, class: 'btn btn-primary mt-4 back' %>
+            <% end %>
+      </div>
+    </div>
+  </div>
+</div>
