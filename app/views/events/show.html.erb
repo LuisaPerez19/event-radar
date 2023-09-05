@@ -1,8 +1,12 @@
 <h1><%= @event.name %></h1>
 
-<div class="photo1">
-  <%=image_tag @event.photo_url, alt: "Event Photo" %>
-</div>
+  <div>
+    <% if @event.photos.attached? %>
+      <% @event.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    <% end %>
+  </div>
 
 
 
@@ -18,5 +22,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget tortor at ma
   <button type="button" style="margin-right: 30px;">Checkout for £10</button>
 </div>
 
-
-
+<div class="row justify-align-center" style="color: white; display: inline-block; width: 250px; height: 40px; margin-left:-35px; margin-top:35px;">
+  <%= link_to 'Book this event', new_event_booking_path(@event), class: "btn btn primary" %>
+</div>
