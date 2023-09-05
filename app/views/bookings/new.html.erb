@@ -1,0 +1,9 @@
+<div class="booking-form-container"> <!-- Add a container div -->
+  <h1>Event Booking</h1>
+
+  <div>
+    <%= simple_form_for [@event, @booking] do |f| %>
+      <%= f.submit "Submit Booking", class: "btn button-blue" %>
+    <% end %>
+  </div>
+</div>
