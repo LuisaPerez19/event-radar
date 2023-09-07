@@ -77,7 +77,10 @@ event3 = Event.new(
   location:"4 St James's Mkt, St. James's, London SW1Y 4AH",
   user: user1
 )
+jazz_file = URI.open("https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+
 event3.photos.attach(io: rock_file, filename: "rock.png", content_type: "image/png")
+event3.photos.attach(io: jazz_file, filename: "jazz.png", content_type: "image/png")
 event3.save
 
 puts "finished"
