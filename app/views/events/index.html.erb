@@ -8,19 +8,19 @@
   <div class="carousel-inner">
     <% @events.each do |event|%>
     <div class="carousel-item active">
-      <div class="cards-wrapper">
-        <div class="card">
-            <%= link_to event_path(event), class:"text-decoration-none" do %>
-                      <% if event.photos.attached? %>
-                        <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
-                      <% end %>
+
+      <div class="card">
+          <%= link_to event_path(event), class:"text-decoration-none" do %>
+                    <% if event.photos.attached? %>
+                      <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
                     <% end %>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= event.name %></h5>
-                    <small class="text-muted t-color">£<%= event.price %></small>
-                  </div>
-        </div>
+                  <% end %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= event.name %></h5>
+                  <small class="text-muted t-color">£<%= event.price %></small>
+                </div>
       </div>
+
     </div>
     <% end  %>
   </div>
