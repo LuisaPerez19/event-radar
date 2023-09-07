@@ -1,0 +1,30 @@
+
+<div>
+  <h2 id="bookings-title">Bookings & Event</h2>
+
+  <div class="container py-5">
+    <% @bookings.each do |booking| %>
+    <div class= "card mt-4">
+      <div class="row">
+
+        <div class="col-md-4">
+          <%= cl_image_tag booking.event.photos.first.key, width: 296, crop: :fill, class: "event-img img-fluid" %>
+        </div>
+
+        <div class="col-md-8">
+          <p> <strong>Event: <%= booking.event.name %> </strong> </p>
+          <p> Price: £ <%= booking.event.price %>/day</p>
+          <p>Start Date: <%= booking.event.start_date %></p>
+          <p>End Date: <%= booking.event.end_date %></p>
+        </div>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
+
+<span> <%= link_to "Homepage", root_path, class: "button-green" %> </span>
+
+<span>  <%= link_to "Back to list", events_path, class: "button-blue"  %> </span>
