@@ -3,7 +3,9 @@
 
   <div>
     <%= simple_form_for [@event, @booking] do |f| %>
-      <%= f.submit "Submit Booking", class: "btn button-blue" %>
+      <%= f.hidden_field :user_id, value: current_user.id  %>
+      <%= f.hidden_field :event_id, value: @event.id %>
+      <%= f.submit "Submit Booking", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
