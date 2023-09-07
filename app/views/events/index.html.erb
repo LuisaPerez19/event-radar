@@ -8,15 +8,16 @@
     <% @events.each do |event|%>
       <div class="co-12 col-sm-6 col-md-4 mb-3">
         <div class="bg-white rounded shadow h-100">
-        <% if event.photos.attached? %>
-          <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
+        <%= link_to event_path(event), class:"text-decoration-none" do %>
+          <% if event.photos.attached? %>
+            <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
+          <% end %>
         <% end %>
             <div class="p-3 rounded-bottom d-flex flex-column">
-            <%= link_to event_path(event), class:"text-decoration-none" do %>
-              <strong><%= event.name %></strong>
-              <small class="text-muted">£<%= event.price %></small>
+              <strong class="t-color"><%= event.name %></strong>
+              <small class="text-muted t-color">£<%= event.price %></small>
             </div>
-            <% end %>
+
         </div>
       </div>
     <% end  %>

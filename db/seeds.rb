@@ -9,31 +9,35 @@
 puts 'Deleting existing records...'
 
 # Review.delete_all
-# Booking.delete_all
+Booking.delete_all
 Event.delete_all
 User.delete_all
 
 puts 'Seeding..'
 
 user1 = User.create!(
+  username: "Luisa Perez",
   email: "luisa.perez@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user2 = User.create!(
+  username: "Aqil",
   email: "Aqil@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user3 = User.create!(
+  username: "Aaron",
   email: "Aaron@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user4 = User.create!(
+  username: "Zina",
   email: "Zina@myevent.com",
   password: "123456",
   password_confirmation: "123456"
