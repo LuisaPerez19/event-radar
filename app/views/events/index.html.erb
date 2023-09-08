@@ -1,28 +1,33 @@
-<div>
+
+
+
+  <div>
   <h1 class="index">Events found for you!</h1>
 </div>
 
-
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <% @events.each do |event|%>
-    <div class="carousel-item active">
-
-      <div class="card">
-          <%= link_to event_path(event), class:"text-decoration-none" do %>
-                    <% if event.photos.attached? %>
-                      <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
-                    <% end %>
+    <% @events.each_slice(3).with_index do |event_group, index| %>
+      <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
+        <div class="row">
+          <% event_group.each do |event| %>
+            <div class="col-md-4">
+              <div class="card">
+                <%= link_to event_path(event), class: "text-decoration-none" do %>
+                  <% if event.photos.attached? %>
+                    <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
                   <% end %>
+                <% end %>
                 <div class="card-body">
                   <h5 class="card-title"><%= event.name %></h5>
                   <small class="text-muted t-color">£<%= event.price %></small>
                 </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
-
-    </div>
-    <% end  %>
+    <% end %>
   </div>
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
