@@ -83,8 +83,10 @@ event3 = Event.new(
   location:"4 St James's Mkt, St. James's, London SW1Y 4AH",
   user: user1
 )
-event3.photos.attach(io: rock_file, filename: "rock.png", content_type: "image/png")
+event3.photos.attach(io: rock_file, filename: "rock.jpg", content_type: "image/png")
 event3.save
+
+
 
 electronic_file = URI.open("https://images.unsplash.com/photo-1574154894072-18ba0d48321b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
 event4 = Event.new(
@@ -100,3 +102,4 @@ event4.photos.attach(io: electronic_file, filename: "rock.png", content_type: "i
 event4.save
 
 puts "finished"
+

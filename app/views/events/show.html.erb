@@ -1,27 +1,37 @@
-<h1><%= @event.name %></h1>
+
+
+</div>
+  <div class="split-container">
+    <div class="left-pane">
+      <% if @event.photos.attached? %>
+        <% @event.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <% end %>
+        <p>
+      <h2><strong>About this event</strong></h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget tortor at mauris feugiat tincidunt. Nullam auctor eget quam in mattis. Aenean nec urna a quam blandit semper. Vestibulum vel urna nec leo consequat venenatis. Maecenas gravida, justo ac congue ultricies, libero elit aliquet purus, in suscipit dolor nisl sed nisi.
+        </p>
+  </div>
+
+    <div class="right-pane">
+       <% if @event.photos.attached? %>
+        <% @event.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <% end %>
+      <p>geocoding MAP BOOM!</p>
+    <button type="button" class="purple-button" style="margin-right: 30px; padding: 10px 10px;">Chat Group</button>
+
+    </div>
+  </div>
 
   <div>
-    <% if @event.photos.attached? %>
-      <% @event.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-    <% end %>
+    <button type="button" class="purple-button" style="margin-right: 30px; margin-left: 20px; padding: 10px 10px;">Sales end 19th Aug 2023</button>
+    <a href="<%= new_event_booking_path(@event) %>">
+  <button type="button" class="purple-button" style="margin-right: 30px; padding: 10px 10px;">Checkout for £10</button>
+</a>
   </div>
 
 
-
-<h2><strong>About this event       Organiser </strong></h2>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget tortor at mauris feugiat tincidunt. Nullam auctor eget quam in mattis. Aenean nec urna a quam blandit semper. Vestibulum vel urna nec leo consequat venenatis. Maecenas gravida, justo ac congue ultricies, libero elit aliquet purus, in suscipit dolor nisl sed nisi.
-
-<p>
-
-
-<div>
-  <button type="button" style="margin-right: 30px;">Sales end 19th Aug 2023</button>
-  <button type="button" style="margin-right: 30px;">Checkout for £10</button>
-</div>
-
-<div class="row justify-align-center" style="color: white; display: inline-block; width: 250px; height: 40px; margin-left:-35px; margin-top:35px;">
-  <%= link_to 'Book this event', new_event_booking_path(@event), class: "btn btn primary" %>
-</div>
