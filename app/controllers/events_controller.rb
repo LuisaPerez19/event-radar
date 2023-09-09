@@ -21,7 +21,7 @@ class EventsController < ApplicationController
         @event = Event.new(event_params)
         @event.user = current_user
         if @event.save
-        redirect_to event_path(@event)
+        redirect_to organiser_event_path(current_user)
         else
         render 'new', status: :unprocessable_entity
         end
@@ -44,6 +44,11 @@ class EventsController < ApplicationController
         @event = Event.find(params[:id])
             @event.destroy
         redirect_to events_path, status: :see_other
+    end
+
+    def organiser
+      @user = current_user
+      @events = @user.events
     end
 
     private
