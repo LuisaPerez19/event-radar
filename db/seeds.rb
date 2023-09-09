@@ -6,34 +6,40 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
+
 puts 'Deleting existing records...'
 
 # Review.delete_all
-# Booking.delete_all
+Booking.delete_all
 Event.delete_all
 User.delete_all
 
 puts 'Seeding..'
 
 user1 = User.create!(
+  username: "Luisa Perez",
   email: "luisa.perez@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user2 = User.create!(
+  username: "Aqil",
   email: "Aqil@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user3 = User.create!(
+  username: "Aaron",
   email: "Aaron@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user4 = User.create!(
+  username: "Zina",
   email: "Zina@myevent.com",
   password: "123456",
   password_confirmation: "123456"
@@ -79,3 +85,21 @@ event3 = Event.new(
 )
 event3.photos.attach(io: rock_file, filename: "rock.jpg", content_type: "image/png")
 event3.save
+
+
+
+electronic_file = URI.open("https://images.unsplash.com/photo-1574154894072-18ba0d48321b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+event4 = Event.new(
+  name: "Rockin' Retro Revival",
+  description: "Step back in time and relive the glory days of rock 'n' roll at the Rockin Retro Revival. This nostalgic event transports you to a vintage-style venue adorned with retro decor and classic rock memorabilia. Enjoy electrifying live performances by tribute bands, capturing the essence of legendary rock icons from the 60s and 70s, and let the music transport you to a bygone era of rebellion and rockstar glamour",
+  price: 10,
+  category: "music",
+  photo_url: "rock.jpg",
+  location:"4 St James's Mkt, St. James's, London SW1Y 4AH",
+  user: user1
+)
+event4.photos.attach(io: electronic_file, filename: "rock.png", content_type: "image/png")
+event4.save
+
+puts "finished"
+

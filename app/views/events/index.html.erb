@@ -1,24 +1,51 @@
+
+
+
 <div>
-  <h1 class="index">Events found for you!</h1>
+  <h1 class="indx">Events found for you!</h1>
 </div>
 
 
-<div class="container py-5">
-  <div class="row">
-    <% @events.each do |event|%>
-      <div class="co-12 col-sm-6 col-md-4 mb-3">
-        <div class="bg-white rounded shadow h-100">
-        <% if event.photos.attached? %>
-          <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
-        <% end %>
-            <div class="p-3 rounded-bottom d-flex flex-column">
-            <%= link_to event_path(event), class:"text-decoration-none" do %>
-              <strong><%= event.name %></strong>
-              <small class="text-muted">£<%= event.price %></small>
-            </div>
+<div class="container">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @events.each_slice(3).with_index do |event_group, index| %>
+        <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
+          <div class="row">
+            <% event_group.each do |event| %>
+              <div class="col-md-4">
+                <div class="card">
+                  <%= link_to event_path(event), class: "text-decoration-none" do %>
+                    <% if event.photos.attached? %>
+                      <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
+                    <% end %>
+                  <% end %>
+                  <div class="card-body">
+                    <h5 class="card-title t-color"><%= event.name %></h5>
+                    <small class="text-muted t-color">£<%= event.price %></small>
+                  </div>
+                </div>
+              </div>
             <% end %>
+          </div>
         </div>
-      </div>
-    <% end  %>
+      <% end %>
+    </div>
   </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+<div class="div2">
+<h3>map goes here</h3>
 </div>
