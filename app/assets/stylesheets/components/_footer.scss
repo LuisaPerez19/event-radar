@@ -1,0 +1,47 @@
+/* styles.css */
+footer {
+  position: bottom center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  text-align: center;
+  padding: 0px 0;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between; /* Create space between logos */
+  padding: 0px 0;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the logos horizontally */
+}
+
+.logo {
+  flex: 0 0 30%; /* Adjust the width of individual logos */
+  text-align: center;
+}
+
+.logo img {
+  width: 50px; /* Adjust the width of the logo image */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0.5; /* Adjust the opacity (0.0 to 1.0) as needed */
+}
+
+.logo-text {
+  color: white; /* Text color for logos */
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+.social-icons {
+  margin-top: 20px; /* Add spacing between logos and social icons */
+}
+
+.social-icons a {
+  margin: 0 15px; /* Adjust the spacing between social icons */
+}
+
+.social-icons img {
+  width: 30px; /* Adjust the width of social icons */
+  height: auto; /* Maintain aspect ratio */
+}

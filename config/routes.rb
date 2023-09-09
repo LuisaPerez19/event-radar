@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :events do
+    get :organiser, on: :member
     resources :bookings, only: [ :new, :create ]
     # resources :reviews, only: [ :new, :create ]
   end
