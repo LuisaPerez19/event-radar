@@ -2,6 +2,9 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many_attached :photos
+  validates :name, :description, :price, :category, :location, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
   CATEGORIES = %w[Music Education Business Food&Drink Performing&VisualArts]
 
   include PgSearch::Model
