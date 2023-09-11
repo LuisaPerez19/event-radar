@@ -14,7 +14,7 @@
           <div class="row">
             <% event_group.each do |event| %>
               <div class="col-md-4">
-                <div class="card">
+                <div class="card slider">
                   <%= link_to event_path(event), class: "text-decoration-none" do %>
                     <% if event.photos.attached? %>
                       <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
