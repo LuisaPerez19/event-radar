@@ -53,10 +53,12 @@ event1 = Event.new(
   price: 12,
   category: "Music",
   location:"278 St Paul's Rd, London N1 2LH",
+  start_date: DateTime.new(2019, 8, 10, 4, 10, 9),
+  end_date:DateTime.new(2019, 8, 10, 4, 10, 9),
   user: user1
 )
 event1.photos.attach(io: indie_file, filename: "music.png", content_type: "image/png")
-event1.save
+event1.save!
 
 jazz_file = URI.open("https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
 
@@ -66,11 +68,13 @@ event2 = Event.new(
   price: 10,
   category: "Music",
   photo_url: "jazz.jpg",
+  start_date: DateTime.new(2019, 8, 10, 4, 10, 9),
+  end_date:DateTime.new(2019, 8, 10, 4, 10, 9),
   location: "Grand Buildings, 31-32 Northumberland Ave, London WC2N 5BW",
   user: user1
 )
 event2.photos.attach(io: jazz_file, filename: "jazz.png", content_type: "image/png")
-event2.save
+event2.save!
 
 rock_file = URI.open("https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
 
@@ -80,11 +84,13 @@ event3 = Event.new(
   price: 10,
   category: "music",
   photo_url: "rock.jpg",
+  start_date: DateTime.new(2019, 8, 10, 4, 10, 9),
+  end_date:DateTime.new(2019, 8, 10, 4, 10, 9),
   location:"4 St James's Mkt, St. James's, London SW1Y 4AH",
   user: user1
 )
 event3.photos.attach(io: rock_file, filename: "rock.jpg", content_type: "image/png")
-event3.save
+event3.save!
 
 
 
@@ -96,10 +102,11 @@ event4 = Event.new(
   category: "music",
   photo_url: "rock.jpg",
   location:"4 St James's Mkt, St. James's, London SW1Y 4AH",
+  start_date: DateTime.new(2019, 8, 10, 4, 10, 9),
+  end_date:DateTime.new(2019, 8, 10, 4, 10, 9),
   user: user1
 )
 event4.photos.attach(io: electronic_file, filename: "rock.png", content_type: "image/png")
-event4.save
+event4.save!
 
 puts "finished"
-

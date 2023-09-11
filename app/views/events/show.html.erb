@@ -1,33 +1,45 @@
 </div>
   <div class="split-container">
-    <div class="left-pane">
+    <div class="left-pane justify-content-center">
+      <div class="name">
+        <h1><%= @event.name %></h1>
+      </div>
       <% if @event.photos.attached? %>
         <% @event.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill %>
         <% end %>
         <% end %>
         <p>
       <h2><strong>About this event</strong></h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget tortor at mauris feugiat tincidunt. Nullam auctor eget quam in mattis. Aenean nec urna a quam blandit semper. Vestibulum vel urna nec leo consequat venenatis. Maecenas gravida, justo ac congue ultricies, libero elit aliquet purus, in suscipit dolor nisl sed nisi.
+          <%= @event.description %>
         </p>
+      <div>
+      <br>
+      <button type="button" class="btn btn-primary" style="margin-right: 30px; margin-left: 20px; padding: 10px 10px;">Sales end 19th Aug 2023</button>
+      <a href="<%= new_event_booking_path(@event) %>">
+      <button type="button" class="btn btn-primary" style="margin-right: 30px; padding: 10px 10px;">Checkout for £ <%= @event.price %></button>
+    </a>
+  </div>
   </div>
 
     <div class="right-pane">
-       <% if @event.photos.attached? %>
+    <div class="info">
+      <span > <i class="fa-solid fa-location-dot"></i> <%= @event.location %></span>
+    </div>
+      <div class="date">
+      <span > <i class="fa-solid fa-calendar-days"></i> <%= @event.start_date.strftime("%d/%m/%y - %T") %></span>
+    </div>
+    <div class="map">
+      <% if @event.photos.attached? %>
         <% @event.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
-        <% end %>
+      <% end %>
       <p>geocoding MAP BOOM!</p>
-    <button type="button" class="purple-button" style="margin-right: 30px; padding: 10px 10px;">Chat Group</button>
+    </div>
+
+    <button type="button" class="btn btn-primary" style="margin-right: 30px; padding: 10px 10px;">Chat Group</button>
 
     </div>
-  </div>
-
-  <div>
-    <button type="button" class="purple-button" style="margin-right: 30px; margin-left: 20px; padding: 10px 10px;">Sales end 19th Aug 2023</button>
-    <a href="<%= new_event_booking_path(@event) %>">
-  <button type="button" class="purple-button" style="margin-right: 30px; padding: 10px 10px;">Checkout for £10</button>
-</a>
   </div>

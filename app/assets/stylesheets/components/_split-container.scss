@@ -4,12 +4,51 @@
   align-items: flex-start;
 }
 
+
 .left-pane {
   flex: 1;
   padding: 20px;
+  margin-left: 150px;
 }
+
 
 .right-pane {
   flex: 1;
   padding: 20px;
+  margin-top: 60px;
+  margin-left: 100px;
+}
+
+.info{
+  background-color: #1E2630;
+  color: white;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info span{
+  padding: 10px
+}
+
+.date{
+  background-color: #1E2630;
+  color: white;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date span{
+  padding: 10px
+}
+
+.name{
+  margin-left: 60px;
 }
