@@ -12,6 +12,14 @@
             class: "form-control",
             placeholder: "Find an event"
         %>
+
+        <input type="date"
+             id="date"
+             name="start_date"
+             class="form-control"
+             value="<%= params[:start_date] %>"
+             placeholder="Select a Date"
+      >
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>

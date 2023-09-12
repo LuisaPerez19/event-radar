@@ -53,7 +53,7 @@ event1 = Event.new(
   price: 12,
   category: "Music",
   location:"278 St Paul's Rd, London N1 2LH",
-  start_date: DateTime.new(2019, 8, 10, 4, 10, 9),
+  start_date: DateTime.new(2023, 8, 10, 4, 10, 9),
   end_date:DateTime.new(2019, 8, 10, 4, 10, 9),
   user: user1
 )

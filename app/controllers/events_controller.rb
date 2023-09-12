@@ -1,18 +1,26 @@
 class EventsController < ApplicationController
   def index
-     if params[:query].present?
+    if params[:query].present?
       @events = Event.search_by_name_and_category(params[:query])
-
     else
-    @events = Event.all
-      end
- @markers = @events.geocoded.map do |event|
-  {
-    lat: event.latitude,
-    lng: event.longitude
-  }
+      @events = Event.all
+    end
+
+    date = params[:start_date]
+    if date.present?
+      start_time = DateTime.parse(date).beginning_of_day
+      end_time = DateTime.parse(date).end_of_day
+      @events = @events.where(start_date: start_time..end_time)
+    end
+
+    @markers = @events.geocoded.map do |event|
+    {
+      lat: event.latitude,
+      lng: event.longitude
+    }
+    end
   end
-end
+
   def show
     @event = Event.find(params[:id])
     # @review = Review.new
