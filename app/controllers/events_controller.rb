@@ -23,8 +23,20 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    # @review = Review.new
+
+    # Check if the event has geocoded data (latitude and longitude)
+    if @event.latitude.present? && @event.longitude.present?
+      @marker = {
+        lat: @event.latitude,
+        lng: @event.longitude
+      }
+    else
+      @marker = nil
+    end
+
+    # Other actions or data preparation for the show page...
   end
+
 
   def new
     @event = Event.new
