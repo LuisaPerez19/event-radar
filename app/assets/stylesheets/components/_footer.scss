@@ -6,7 +6,7 @@ footer {
   width: 100%;
 
   text-align: center;
-  padding: 0px 0;
+  padding: 20px 0;
 }
 
 .logo-container {
@@ -23,9 +23,10 @@ footer {
 }
 
 .logo img {
-  width: 50px; /* Adjust the width of the logo image */
+  width: 75px; /* Adjust the width of the logo image */
   height: auto; /* Maintain aspect ratio */
   opacity: 0.5; /* Adjust the opacity (0.0 to 1.0) as needed */
+  border-radius: 50%;
 }
 
 .logo-text {
@@ -38,10 +39,10 @@ footer {
 }
 
 .social-icons a {
-  margin: 0 15px; /* Adjust the spacing between social icons */
+  margin: 0 30px; /* Adjust the spacing between social icons */
 }
 
 .social-icons img {
-  width: 30px; /* Adjust the width of social icons */
+  width: 50px; /* Adjust the width of social icons */
   height: auto; /* Maintain aspect ratio */
 }
