@@ -10,10 +10,13 @@ require "open-uri"
 
 puts 'Deleting existing records...'
 
-# Review.delete_all
+Message.delete_all
+Chatroom.delete_all
 Booking.delete_all
 Event.delete_all
 User.delete_all
+
+
 
 puts 'Seeding..'
 

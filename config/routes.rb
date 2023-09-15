@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :events do
     get :organiser, on: :member
     resources :bookings, only: [ :new, :create ]
-    # resources :reviews, only: [ :new, :create ]
+    resources :chatrooms, only: :show do
+      resources :messages, only: :create
+    end
   end
 
   resources :bookings, only: [ :index, :show ]
