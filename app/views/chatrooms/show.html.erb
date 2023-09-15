@@ -1,23 +1,131 @@
-<div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>">
-  <h1>#<%= @chatroom.name %></h1>
 
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-    <% end %>
-  </div>
+<div class="split-container">
+    <div class="chat-box justify-content-center">
+
+      <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>">
+        <h2>#<%= @chatroom.event.name %></h2>
+
+        <div class="p"><p>Ask a question or share an idea!</p></div>
+
+        <div class="messages" data-chatroom-subscription-target="messages">
+          <% @chatroom.messages.each do |message| %>
+            <%= render "messages/message", message: message %>
+          <% end %>
+        </div>
+
+        <%= simple_form_for [@event, @chatroom, @message], url: event_chatroom_messages_path(@event, @chatroom),
+          html: {class: "d-flex", data: {action: "turbo:submit-end->chatroom-subscription#resetForm"}} do |f|
+        %>
+          <%= f.input :content,
+            label: false,
+            placeholder: "Message ##{@chatroom.event.name}",
+            wrapper_html: {class: "flex-grow-1"}
+          %>
+          <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+        <% end %>
 
 
+      </div>
+    </div>
 
-  <%= simple_form_for [@event, @chatroom, @message], url: event_chatroom_messages_path(@event, @chatroom),
-    html: {class: "d-flex", data: {action: "turbo:submit-end->chatroom-subscription#resetForm"}} do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{@chatroom.name}",
-      wrapper_html: {class: "flex-grow-1"}
-    %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
+
+  <div class="right-chat">
+    <div class="organiser">
+    <a href="#" class="chat-avatar">
+            <%= image_tag "user.png", class: "chat-avatar" %>
+          </a>
+    <h4>Organiser: <%= @chatroom.event.user.username %> </h4>
+    </div>
+
+    <div class="users">
+     <p>Attending(20)</p>
+    </div>
+
+    <div class="members">
+
+    <div class="members-box">
+
+     <a href="#" class="chat-avatar">
+            <%= image_tag "woman.png", class: "chat-avatar" %>
+          </a>
+     <a href="#" class="chat-avatar">
+            <%= image_tag "hacker.png", class: "chat-avatar" %>
+          </a>
+     <a href="#" class="chat-avatar">
+            <%= image_tag "astronaut.png", class: "chat-avatar" %>
+          </a>
+     <a href="#" class="chat-avatar">
+            <%= image_tag "woman2.png", class: "chat-avatar" %>
+          </a>
+     <a href="#" class="chat-avatar">
+            <%= image_tag "empathy.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "man.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "man2.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "woman.png", class: "chat-avatar" %>
+          </a>
+
+          <a href="#" class="chat-avatar">
+            <%= image_tag "astronaut.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "hacker.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "empathy.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "woman.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "woman2.png", class: "chat-avatar" %>
+          </a>
+
+          <a href="#" class="chat-avatar">
+            <%= image_tag "hacker.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "man.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "man2.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "man.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "empathy.png", class: "chat-avatar" %>
+          </a>
+
+          <a href="#" class="chat-avatar">
+            <%= image_tag "woman2.png", class: "chat-avatar" %>
+          </a>
+
+            <a href="#" class="chat-avatar">
+            <%= image_tag "astronaut.png", class: "chat-avatar" %>
+          </a>
+      </div>
+
+    </div>
+
+      </div>
+    <%# # leave this div and it helps to separate from footer  %>
+    </div>
 
 </div>
