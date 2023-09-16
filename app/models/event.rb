@@ -11,8 +11,17 @@ class Event < ApplicationRecord
   pg_search_scope :search_by_name_and_category,
   against: [ :name, :category ],
   using: {
-    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    tsearch: { prefix: true }
   }
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  has_one :chatroom, dependent: :destroy
+  after_create :create_chatroom
+
+  private
+
+  def create_chatroom
+    Chatroom.create(name: "Chatroom for #{Event.name}", event: self)
+  end
 end
