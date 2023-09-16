@@ -2,7 +2,7 @@
 
 
 <div>
-  <h1 class="indx">Events found for you!</h1>
+  <h1 class="indx">Events found for you</h1>
 </div>
 
 
@@ -14,21 +14,19 @@
           <div class="row">
             <% event_group.each do |event| %>
               <div class="col-md-4">
-                <div class="card slider">
-                  <%= link_to event_path(event), class: "text-decoration-none" do %>
-                    <% if event.photos.attached? %>
-                      <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
+                <div class="card slider-card">
+            <% if event.photos.attached? %>
+                      <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top card-img" %>
                     <% end %>
-                    <div class="price">
-                    <span>£<%= event.price %></span>
-                    </div>
+        <div class="card-img-overlay text-white d-flex flex-column justify-content-end">
+          <h4 class="card-title"><%= event.name %></h4>
+          <h6 class="card-subtitle mb-2"><%= event.start_date.strftime("%d/%m/%y - %T") %></h6>
 
-                  <% end %>
-                  <div class="card-body">
-                    <h5 class="card-title t-color"><%= event.name %></h5>
-                    <small><%= event.start_date.strftime("%d/%m/%y - %T") %></small>
-                  </div>
-                </div>
+          <div class="link d-flex">
+            <a href="#" class="card-link text-warning">Read More</a>
+          </div>
+        </div>
+      </div>
               </div>
             <% end %>
           </div>

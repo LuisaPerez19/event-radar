@@ -1,13 +1,13 @@
 .event-img{
   width: 100%;
-  height: 220px;
+  height: 300px;
   object-fit: cover;
   object-position: center;
 }
 
 .indx{
   margin-left:600px ;
-  color:#8251CA ;
+  color:#FEDFFF;
   margin-top: 20px;
 }
 
@@ -15,13 +15,16 @@
   color: #8251CA;
 }
 
-.slider{
-  margin-right: 20px;
-  margin-top: 40px;
-  width: 360px;
-  border-radius: 5px;
-  position: relative;
-}
+// .slider-card{
+//   height: 600px;
+// }
+// .slider{
+//   margin-right: 20px;
+//   margin-top: 40px;
+//   width: 360px;
+//   border-radius: 5px;
+//   position: relative;
+// }
 
 
 
@@ -72,4 +75,10 @@
 
 .card {
   border: none !important;
+}
+
+.card-img-overlay {
+
+  background-color: rgba(#000, 0.4);
+
 }
