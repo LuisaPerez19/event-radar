@@ -31,6 +31,8 @@
   </div>
 
     <div class="right-pane">
+
+
     <h1>Billing info</h1>
       <div class="elem-group inlined">
         <label for="ticket_count">Tickets</label>
@@ -46,6 +48,7 @@
         <label for="total_price">Total Price</label>
         <p id="total_price">Total Price: £<span id="display_total_price"><%= @event.price %></span></p>
       </div>
+
 
 
     <div class="map">
@@ -97,3 +100,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 </script>
+
+
+<div>
+      <br>
+      <a href="<%= new_event_booking_path(@event) %>">
+      <button type="button" class="btn btn-primary rounded-circle" style="padding: 10px 20px; background-color: #C069EC; color: white; border: 2px solid white;">Book Now</button>
+    </a>
+  </div>
