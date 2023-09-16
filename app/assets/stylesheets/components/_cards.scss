@@ -20,7 +20,10 @@
   margin-top: 40px;
   width: 360px;
   border-radius: 5px;
+  position: relative;
 }
+
+
 
 .slider:last-child{
   margin-left: 55px;
@@ -33,6 +36,18 @@
 // .col-md-4{
 //   margin-right: -40px;
 // }
+
+.price{
+  background-color: #C069EC;
+  color: white;
+  position: absolute;
+  margin-top: -190px;
+  margin-left: 300px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  border-radius: 5px;
+}
 
 .div2{
   background-color: #8251CA;
@@ -53,4 +68,8 @@
   // margin-top: -140px;
   margin-right: -80px;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23BF40BF' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.card {
+  border: none !important;
 }

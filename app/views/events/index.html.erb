@@ -19,11 +19,14 @@
                     <% if event.photos.attached? %>
                       <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top" %>
                     <% end %>
+                    <div class="price">
+                    <span>£<%= event.price %></span>
+                    </div>
+
                   <% end %>
                   <div class="card-body">
                     <h5 class="card-title t-color"><%= event.name %></h5>
                     <small><%= event.start_date.strftime("%d/%m/%y - %T") %></small>
-                    <small class="text-muted t-color">£<%= event.price %></small>
                   </div>
                 </div>
               </div>
