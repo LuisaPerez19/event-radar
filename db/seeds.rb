@@ -57,11 +57,12 @@ event1 = Event.new(
   description: "Dive into an intimate evening of acoustic melodies at the Indie Vibes Unplugged music event. Set in a cozy, candlelit café, this event features talented singer-songwriters strumming their guitars and pouring their hearts out in soul-stirring performances. Expect a night of raw emotions and captivating lyrics, where the power of storytelling takes center stage",
   price: 12,
   category: "Music",
-  location:"278 St Paul's Rd, London N1 2LH",
+  location: "278 St Paul's Rd, London N1 2LH",
   start_date: DateTime.new(2023, 9, 30, 4, 10),
-  end_date:DateTime.new(2023, 9, 30, 8, 10),
+  end_date: DateTime.new(2023, 9, 30, 8, 10),
   user: user1
 )
+
 event1.photos.attach(io: indie_file, filename: "music.png", content_type: "image/png")
 event1.save!
 
