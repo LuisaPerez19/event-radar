@@ -16,11 +16,12 @@
   flex: 1;
   padding: 20px;
   margin-top: 60px;
-  margin-left: 100px;
+
+
 }
 
 .info{
-  background-color: #1E2630;
+  background-color: none;
   color: white;
   width: 400px;
   margin-bottom: 20px;
@@ -28,14 +29,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .info span{
-  padding: 10px
+  padding: 6px
+
+
 }
 
 .date{
-  background-color: #1E2630;
+  background-color: none;
   color: white;
   width: 400px;
   margin-bottom: 20px;
@@ -43,11 +47,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .date span{
-  padding: 10px
+  padding: 6px;
+  margin-left: 215px;
+  margin-top: -72px;
 }
+
 
 .name{
   margin-left: 60px;
