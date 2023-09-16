@@ -1,24 +1,27 @@
 </div>
-  <div class="split-container">
-    <div class="left-pane justify-content-center">
-      <div class="name">
-        <h1><%= @event.name %></h1>
-      </div>
-      <% if @event.photos.attached? %>
-        <% @event.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill %>
-        <% end %>
-        <% end %>
-        <p>
-      <h2><strong>About this event</strong></h2>
-        <p>
-          <%= @event.description %>
-        </p>
+<div class="split-container">
+  <div class="left-pane justify-content-center">
+    <div class="name" style="text-align: left; margin-left: -100px;">
+  <h1 style="color: white;"><%= @event.name %></h1>
+</div>
+    <% if @event.photos.attached? %>
+  <% @event.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 400, width: 600, crop: :fill, style: "float: left; margin-left: -100px;" %>
+  <% end %>
+<% end %>
+
+<div style="clear: both; margin-bottom: 20px;"></div> <!-- Add space between the photos and Event Details -->
+
+<h2 style="margin-left: -100px; margin-top: 20px; color: white;"><strong>Event Details</strong></h2>
+<p style="margin-left: -100px; color: white;">
+  <%= @event.description %>
+</p>
+
+</p>
       <div>
       <br>
-      <button type="button" class="btn btn-primary" style="margin-right: 30px; margin-left: 20px; padding: 10px 10px;">Sales end 19th Aug 2023</button>
       <a href="<%= new_event_booking_path(@event) %>">
-      <button type="button" class="btn btn-primary" style="margin-right: 30px; padding: 10px 10px;">Checkout for £ <%= @event.price %></button>
+      <button type="button" class="btn btn-primary rounded-circle" style="padding: 10px 20px; background-color: #C069EC; color: white; border: 2px solid white;">Book Now</button>
     </a>
   </div>
   </div>
@@ -44,8 +47,6 @@
 
 
     </div>
-
-    <button type="button" class="btn btn-primary" style="margin-right: 30px; padding: 10px 10px;">Chat Group</button>
 
     </div>
   </div>
