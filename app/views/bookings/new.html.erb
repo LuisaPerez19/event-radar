@@ -1,4 +1,4 @@
-<div class="booking-form-container"> <!-- Add a container div -->
+<div class="booking-form-container">
   <div class="split-container">
     <div class="left-pane-booking">
       <h1>Book <%= @event.name %> </h1>
@@ -19,17 +19,46 @@
       </div>
     </div>
 
-
     <div class="right-pane-booking">
-    <h1>Billing info</h1>
+      <h1>Billing info</h1>
       <div class="elem-group inlined">
-        <label for="tickets">Tickets </label>
-        <input type="number" id="ticket" name="total_tickets" placeholder="1" min="1" active >
+        <label for="ticket_count">Tickets</label>
+        <input type="number" id="ticket_count" name="total_tickets" placeholder="1" min="1" value="1" >
       </div>
-  <div class="elem-group inlined">
-    <label for="price"> Price </label>
-    <input  type="number" id="price" name="total_price" placeholder="<%=@event.price %>" min="0" active >
-  </div>
+      <div class="elem-group inlined">
+        <label for="price_per_ticket">Price per Ticket</label>
+        <input type="number" id="price_per_ticket" name="price_per_ticket" placeholder="<%= @event.price %>" min="0" value="<%= @event.price %>" readonly>
+      </div>
+      <div class="elem-group inlined">
+        <label for="total_price">Total Price</label>
+        <p id="total_price">Total Price: £<span id="display_total_price"><%= @event.price %></span></p>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+const calculate = (pricePerTicket, ticketCount) => {
+  if (isNaN(pricePerTicket) || isNaN(ticketCount)) {
+    return total;
+  }
+
+  var total = pricePerTicket * ticketCount;
+  updateTotalPrice(total);
+}
+function calculateTotalPrice(e){
+  var pricePerTicket = parseFloat(document.getElementById("price_per_ticket").value)
+  var ticketCountElement = e.target;
+  var ticketCount = parseFloat(ticketCountElement.value)
+  calculate(pricePerTicket, ticketCount)
+}
+
+function updateTotalPrice(total) {
+  document.getElementById("display_total_price").textContent = total.toFixed(2);
+}
+document.addEventListener("DOMContentLoaded", function() {
+  var ticketCountElement = document.getElementById("ticket_count");
+  ticketCountElement.addEventListener("change", (e) => calculateTotalPrice(e));
+});
+
+</script>
