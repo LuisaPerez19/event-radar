@@ -1,62 +1,131 @@
 .split-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  // display: flex;
+  // flex-direction: row;
+  // // flex-direction: column;
+  // // justify-content: space-between;
+  // // align-items: stretch;
+  // background-color: purple;
+  // flex-wrap: wrap;
+  // width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
+.column {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex: 1;
+}
 
 .left-pane {
   flex: 1;
   padding: 20px;
-  margin-left: 150px;
+  // margin-left: 150px;
+  background-color: yellow;
+  color: white;
+  // width:400px;
 }
 
+.left-pane h1{
+  color: white;
+}
+
+.event-image{
+  width: 100%;
+}
 
 .right-pane {
   flex: 1;
   padding: 20px;
-  margin-top: 60px;
+  // margin-top: 60px;
+  // width: 400px;
+  background-color: green;
+  display: flex;
 
+}
 
+.right-pane-align{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right-pane h1{
+  padding: 16px;
+}
+
+.tickets{
+
+}
+
+.event-image-info{
+  display: flex;
+  flex-direction: column;
 }
 
 .info{
-  background-color: none;
-  color: white;
-  width: 400px;
-  margin-bottom: 20px;
-  border-radius: 4px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-
+  justify-content: space-between;
+  padding: 8px;
 }
 
-.info span{
-  padding: 6px
-
-
+.ebent-details h1, .event-details p{
+  margin: 0px;
+  padding: 8px;
 }
 
-.date{
-  background-color: none;
-  color: white;
-  width: 400px;
-  margin-bottom: 20px;
-  border-radius: 4px;
+.elem-group-total{
+  width: 95%;
+  display: inline-block;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-
+  justify-content: space-between;
 }
 
-.date span{
-  padding: 6px;
-  margin-left: 215px;
-  margin-top: -72px;
-}
+// .location{
+//   background-color: none;
+//   color: white;
+//   width: 400px;
+//   margin-bottom: 20px;
+//   border-radius: 4px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+// }
+
+// .info span{
+//   padding: 6px
 
 
-.name{
-  margin-left: 60px;
-}
+// }
+
+// .date{
+//   background-color: none;
+//   color: white;
+//   width: 400px;
+//   margin-bottom: 20px;
+//   border-radius: 4px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+// }
+
+// .date span{
+//   padding: 6px;
+//   margin-left: 215px;
+//   margin-top: -72px;
+// }
+
+
+// .name{
+//   margin-left: 60px;
+// }
