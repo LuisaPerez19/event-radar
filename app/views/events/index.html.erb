@@ -6,7 +6,7 @@
 </div>
 
 
-<div class="container">
+<div class="container position-relative">
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <% @events.each_slice(3).with_index do |event_group, index| %>
@@ -14,30 +14,33 @@
           <div class="row">
             <% event_group.each do |event| %>
               <div class="col-md-4">
-                <div class="card slider-card">
-            <% if event.photos.attached? %>
+                <%= link_to event_path(event), class: "text-decoration-none" do %>
+                  <div class="card slider-card">
+                    <% if event.photos.attached? %>
                       <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top card-img" %>
                     <% end %>
-        <div class="card-img-overlay text-white d-flex flex-column justify-content-end">
-          <h4 class="card-title"><%= event.name %></h4>
-          <h6 class="card-subtitle mb-2"><%= event.start_date.strftime("%d/%m/%y - %T") %></h6>
 
-          <div class="link d-flex">
-            <a href="#" class="card-link text-warning">Read More</a>
-          </div>
-        </div>
-      </div>
+                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                      <h4 class="text-white"><%= event.name %></h4>
+                      <h6 class="card-subtitle mb-2 text-white"><%= event.start_date.strftime("%d/%m/%y - %T") %></h6>
+
+                      <div class="link d-flex">
+                        <%= link_to "Read More", event_path(event), class: "card-link text-warning" %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             <% end %>
           </div>
         </div>
       <% end %>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <button class="carousel-control-prev position-absolute top-50 left-0" style="transform: translate(-70%, -50%);" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <button class="carousel-control-next position-absolute top-50 right-0" style="transform: translate(70%, -50%);" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>

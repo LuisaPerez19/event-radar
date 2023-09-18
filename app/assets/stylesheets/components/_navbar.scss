@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  border-bottom: 1px solid rgba(250, 224, 253, 0.2);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,5 +13,14 @@
 }
 
 .colour-text{
-  color:#8251CA;
+  color: #FEDFFF;
+}
+
+.colour-text:hover{
+  color: #C069EC;
+  text-shadow: 5px 5px 20px rgba(150, 150, 150, 0.5);
+}
+
+.dropdown-menu{
+  background-color: #2B232E;
 }
