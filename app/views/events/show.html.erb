@@ -33,7 +33,7 @@
 
       <div class="right-pane">
         <div class="right-pane-align">
-            <%# <div class="booking-form"> %>
+            <%# <div class="booking-form" style="border: 1px solid #ccc; padding: 45px; border-radius: 20px; margin-top: 20px;"> %>
               <div class="tickets">
                 <%# <h2>Billing info</h2> %>
                 <div class="elem-group inlined">
@@ -56,15 +56,16 @@
                 </div>
               </div>
 
-            <%# </div> %>
+
 
 
               <div>
                   <br>
                   <a href="<%= new_event_booking_path(@event) %>">
-                  <button type="button" class="btn btn-primary" style="background-color: #C069EC; ">Book Now</button>
+                  <button type="button" class="btn btn-primary" style="background-color: #C069EC; width: 424px; box-shadow: 5px 5px 20px rgba(150, 150, 150, 0.5);">Book Now</button>
                 </a>
               </div>
+            <%# </div> %>
 
               <div class="map">
                 <% if @event.photos.attached? %>
