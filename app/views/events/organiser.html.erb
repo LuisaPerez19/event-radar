@@ -1,38 +1,36 @@
-<div>
+<div class="container text-center py-5">
   <h2 id="bookings-title">My Events</h2>
 
   <div class="container py-5">
     <% @events.each do |event| %>
-    <div class= "card mt-4">
+    <div class="card mt-4">
       <div class="row">
-
-        <div class="col-md-4">
-        <%= link_to event_path(event), class:"text-decoration-none" do %>
-        <% if event.photos.attached? %>
-          <%= cl_image_tag event.photos.first.key, width: 296, crop: :fill, class: "event-img img-fluid" %>
-
-    <% end %>
-     <% end %>
+        <div class="col-md-6">
+          <%= link_to event_path(event), class: "text-decoration-none" do %>
+            <% if event.photos.attached? %>
+              <%= cl_image_tag event.photos.first.key, width: 296, crop: :fill, class: "event-img img-fluid" %>
+            <% end %>
+          <% end %>
         </div>
 
-        <div class="col-md-8">
-          <p> <strong>Event: <%= event.name %> </strong> </p>
-          <p> Price: £ <%= event.price %>/day</p>
-          <p>Start Date: <%= event.start_date %></p>
-          <p>End Date: <%= event.end_date %></p>
-          <%= link_to "Edit", edit_event_path(event), class: "button-green" %>
-          <%= link_to " Delete",
-                        event_path(event), class: "button-green",
-                        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <div class="col-md-6">
+          <div class="card-body custom-card-body">
+            <p class="custom-card-title"><strong>Event: <%= event.name %></strong></p>
+            <p class="custom-card-text">Price: £<%= event.price %>/day</p>
+            <p class="custom-card-text">Start Date: <%= event.start_date %></p>
+            <p class="custom-card-text">End Date: <%= event.end_date %></p>
+            <%= link_to "Edit", edit_event_path(event), class: "button-green" %>
+            <%= link_to "Delete", event_path(event), class: "button-green",
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          </div>
         </div>
-
       </div>
     </div>
     <% end %>
   </div>
 
+  <div class="mt-4">
+    <%= link_to "Homepage", root_path, class: "button-green" %>
+    <%= link_to "Back to list", events_path, class: "button-blue" %>
+  </div>
 </div>
-
-<span> <%= link_to "Homepage", root_path, class: "button-green" %> </span>
-
-<span>  <%= link_to "Back to list", events_path, class: "button-blue"  %> </span>

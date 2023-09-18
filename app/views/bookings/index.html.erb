@@ -1,30 +1,27 @@
-
-<div>
+<div class="container text-center py-5">
   <h2 id="bookings-title">Bookings & Event</h2>
 
-  <div class="container py-5">
+  <div class="row justify-content-start">
     <% @bookings.each do |booking| %>
-    <div class= "card mt-4">
-      <div class="row">
-
-        <div class="col-md-4">
+    <div class="col-md-6">
+      <div class="card mt-4">
+        <%= link_to event_path(booking.event) do %>
           <%= cl_image_tag booking.event.photos.first.key, width: 296, crop: :fill, class: "event-img img-fluid" %>
-        </div>
+        <% end %>
 
-        <div class="col-md-8">
-          <p> <strong>Event: <%= booking.event.name %> </strong> </p>
-          <p> Price: £ <%= booking.event.price %>/day</p>
-          <p>Start Date: <%= booking.event.start_date %></p>
-          <p>End Date: <%= booking.event.end_date %></p>
-        </div>
-
+        <div class="card-body custom-card-body">
+  <p class="custom-card-title"><strong>Event: <%= booking.event.name %></strong></p>
+  <p class="custom-card-text">Price: £<%= booking.event.price %>/day</p>
+  <p class="custom-card-text">Start Date: <%= booking.event.start_date %></p>
+  <p class="custom-card-text">End Date: <%= booking.event.end_date %></p>
+</div>
       </div>
     </div>
     <% end %>
   </div>
 
+  <div class="mt-4">
+    <%= link_to "Homepage", root_path, class: "button-green" %>
+    <%= link_to "Back to list", events_path, class: "button-blue" %>
+  </div>
 </div>
-
-<span> <%= link_to "Homepage", root_path, class: "button-green" %> </span>
-
-<span>  <%= link_to "Back to list", events_path, class: "button-blue"  %> </span>
