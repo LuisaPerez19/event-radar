@@ -1,18 +1,7 @@
-// .chat-container{
-//   width: 500px;
-//   align-items: stretch;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   display: flex;
-//     flex-direction: column;
-//     flex-wrap: wrap;
-//     width: 100%;
-// }
-
 .chat-container{
   // border: 2px solid red;
   width: 1400px;
-  margin-left: 40px;
+  margin-left: 130px;
   height: 85vh;
   margin-top: 40px;
 }
@@ -21,6 +10,9 @@
   border: 2px solid #FEDFFF;
   width: 50%;
   float: left;
+  margin-left: 0px;
+  height: 623px;
+  margin-top: 15px;
 }
 
 
@@ -28,11 +20,14 @@
   // border: 2px solid #FEDFFF;
   width: 40%;
   float: right;
+  margin-left: -40px;
+  margin-top: 15px;
+
 }
 
 .chatroom {
-  background: white;
-  height: calc(80vh - 25px);
+  background: #FEFEFE;
+  height: calc(85vh - 63px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -88,59 +83,53 @@ h2{
   margin-left: 300px;
 }
 
-// .chat-box{
-//   width: 700px;
-//   margin-left: 110px ;
-//   // flex: 1;
-// }
-
-// .right-chat{
-//   width: 400px;
-//   height: 800px;
-//   margin-top: 100px;
-//   // margin-left: 300px;
-//   margin-right: 150px;
-// }
-
 .organiser{
   // border: 1px solid #8251CA;
   // background-color: white;
   width: 400px;
-  height: 100px;
+  height: 140px;
   border-radius: 5px;
   border: 1px solid #FEDFFF;
 }
 
+.organiser-info{
+  // border: 1px solid red;
+  height: 120px;
+  margin-left: 40px;
+  margin-top: 22px;
+}
+
 .organiser h5{
-  margin-left: 120px;
+  margin-left: 20px;
   color: #FEDFFF ;
   margin-top: 10px;
 }
 
-.organiser a .chat-avatar{
-  margin-top: -30px;
-  margin-left: 40px;
+.organiser a {
+  margin-top: -10px;
+  margin-left: 30px;
+  margin-bottom: -20px;
 }
 
 .organiser p{
   color: #FEDFFF;
-  font-size: 20px;
-  margin-left: 120px;
-  margin-top: -40px;
+  font-size: 18px;
+  margin-left: 110px;
+  margin-top: -50px;
 
 }
 
 .right-chat .members{
   border: 1px solid #FEDFFF;
   width: 400px;
-  height: 400px;
+  height: 380px;
   margin-top: 100px;
   // justify-content: center;
   // align-items: center;
 }
 
 .users{
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: -80px;
   color:  #FEDFFF ;
   font-size: 20px;
