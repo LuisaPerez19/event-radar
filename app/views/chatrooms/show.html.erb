@@ -1,5 +1,5 @@
 
-<div class="split-container chat-container">
+<div class="chat-container">
     <div class="chat-box justify-content-center">
 
       <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>">
@@ -30,34 +30,36 @@
 
 
   <div class="right-chat">
-    <div class="organiser">
-    <a href="#" class="chat-avatar">
-            <%= image_tag "user.png", class: "chat-avatar" %>
-          </a>
-    <h4>Organiser: <%= @chatroom.event.user.username %> </h4>
-    </div>
+      <div class="organiser">
+      <h5>Organiser</h5>
+      <a href="#" class="chat-avatar">
+              <%= image_tag "user.png", class: "chat-avatar" %>
+            </a>
 
-    <div class="users">
-     <p>Attending(20)</p>
-    </div>
+      <p><%= @chatroom.event.user.username %></p>
+      </div>
 
-    <div class="members">
+        <div class="users">
+        <p>Attending(20)</p>
+        </div>
 
-    <div class="members-box">
+      <div class="members">
 
-     <a href="#" class="chat-avatar">
+        <div class="members-box">
+
+          <a href="#" class="chat-avatar">
             <%= image_tag "woman.png", class: "chat-avatar" %>
           </a>
-     <a href="#" class="chat-avatar">
+         <a href="#" class="chat-avatar">
             <%= image_tag "hacker.png", class: "chat-avatar" %>
           </a>
-     <a href="#" class="chat-avatar">
+          <a href="#" class="chat-avatar">
             <%= image_tag "astronaut.png", class: "chat-avatar" %>
           </a>
-     <a href="#" class="chat-avatar">
+           <a href="#" class="chat-avatar">
             <%= image_tag "woman2.png", class: "chat-avatar" %>
           </a>
-     <a href="#" class="chat-avatar">
+          <a href="#" class="chat-avatar">
             <%= image_tag "empathy.png", class: "chat-avatar" %>
           </a>
 
@@ -120,12 +122,8 @@
             <a href="#" class="chat-avatar">
             <%= image_tag "astronaut.png", class: "chat-avatar" %>
           </a>
-      </div>
-
-    </div>
+        </div>
 
       </div>
-    <%# # leave this div and it helps to separate from footer  %>
-    </div>
-
+  </div>
 </div>

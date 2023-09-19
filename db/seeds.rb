@@ -28,21 +28,21 @@ user1 = User.create!(
 )
 
 user2 = User.create!(
-  username: "Aqil",
+  username: "Aqil Imran",
   email: "Aqil@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user3 = User.create!(
-  username: "Aaron",
+  username: "Aaron Ayoubi",
   email: "Aaron@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user4 = User.create!(
-  username: "Zina",
+  username: "Zina Ivashko",
   email: "Zina@myevent.com",
   password: "123456",
   password_confirmation: "123456"

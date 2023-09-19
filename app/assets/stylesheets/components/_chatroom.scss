@@ -1,18 +1,38 @@
+// .chat-container{
+//   width: 500px;
+//   align-items: stretch;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     width: 100%;
+// }
+
 .chat-container{
-  width: 500px;
-  align-items: stretch;
-  flex-direction: row;
-  justify-content: space-between;
-  display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
+  // border: 2px solid red;
+  width: 1400px;
+  margin-left: 40px;
+  height: 85vh;
+  margin-top: 40px;
+}
+
+.chat-box{
+  border: 2px solid #FEDFFF;
+  width: 50%;
+  float: left;
+}
+
+
+.right-chat{
+  // border: 2px solid #FEDFFF;
+  width: 40%;
+  float: right;
 }
 
 .chatroom {
   background: white;
-  margin-top: 30px;
-  height: calc(100vh - 35px);
+  height: calc(80vh - 25px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,42 +88,50 @@ h2{
   margin-left: 300px;
 }
 
-.chat-box{
-  width: 700px;
-  margin-left: 110px ;
-  // flex: 1;
-}
+// .chat-box{
+//   width: 700px;
+//   margin-left: 110px ;
+//   // flex: 1;
+// }
 
-.right-chat{
-  width: 400px;
-  height: 800px;
-  margin-top: 100px;
-  // margin-left: 300px;
-  margin-right: 150px;
-}
+// .right-chat{
+//   width: 400px;
+//   height: 800px;
+//   margin-top: 100px;
+//   // margin-left: 300px;
+//   margin-right: 150px;
+// }
 
 .organiser{
   // border: 1px solid #8251CA;
   // background-color: white;
   width: 400px;
   height: 100px;
-margin-left: -40px;
-  margin-top: -30px;
   border-radius: 5px;
+  border: 1px solid #FEDFFF;
 }
 
-.organiser h4{
+.organiser h5{
   margin-left: 120px;
-  margin-top: -50px;
+  color: #FEDFFF ;
+  margin-top: 10px;
 }
 
 .organiser a .chat-avatar{
-  margin-top: 20px;
+  margin-top: -30px;
   margin-left: 40px;
 }
 
+.organiser p{
+  color: #FEDFFF;
+  font-size: 20px;
+  margin-left: 120px;
+  margin-top: -40px;
+
+}
+
 .right-chat .members{
-  border: 1px solid #8251CA;
+  border: 1px solid #FEDFFF;
   width: 400px;
   height: 400px;
   margin-top: 100px;
@@ -114,6 +142,8 @@ margin-left: -40px;
 .users{
   margin-top: 40px;
   margin-bottom: -80px;
+  color:  #FEDFFF ;
+  font-size: 20px;
 }
 
 .members-box{
