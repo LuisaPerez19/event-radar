@@ -16,7 +16,8 @@ class EventsController < ApplicationController
     @markers = @events.geocoded.map do |event|
     {
       lat: event.latitude,
-      lng: event.longitude
+      lng: event.longitude,
+      info_window: render_to_string(partial: "popup", locals: {event: event})
     }
     end
   end
@@ -29,7 +30,7 @@ class EventsController < ApplicationController
     if @event.latitude.present? && @event.longitude.present?
       @marker = {
         lat: @event.latitude,
-        lng: @event.longitude
+        lng: @event.longitude,
       }
     else
       @marker = nil
