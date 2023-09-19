@@ -26,7 +26,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @bookings = Booking.new
+    @booking = Booking.new
 
     # Check if the event has geocoded data (latitude and longitude)
     if @event.latitude.present? && @event.longitude.present?
