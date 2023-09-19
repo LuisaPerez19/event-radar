@@ -1,0 +1,55 @@
+<div class="tickets">
+                <%# <h2>Billing info</h2> %>
+                <div class="elem-group inlined">
+                  <label for="ticket_count">Tickets</label>
+                  <input type="number" id="ticket_count" name="total_tickets" placeholder="1" min="1" value="1" >
+                </div>
+
+                <div class="elem-group inlined">
+                  <label for="price_per_ticket">Price per Ticket</label>
+                  <input type="number" id="price_per_ticket" name="price_per_ticket" placeholder="<%= @event.price %>" min="0" value="<%= @event.price %>" readonly>
+                </div>
+              </div>
+
+              <div class="elem-group-total">
+                <div>
+                  <label for="total_price">Total</label>
+                </div>
+                <div>
+                  <p id="total_price">Total Price: £<span id="display_total_price"><%= @event.price %></span></p>
+                </div>
+              </div>
+
+                <div style="margin-top: 20px">
+                  <%= simple_form_for [@event, @booking] do |f| %>
+                    <%= f.hidden_field :user_id, value: current_user.id  %>
+                    <%= f.hidden_field :event_id, value: @event.id %>
+                    <%= f.submit "Book Now", class: "btn btn-primary submit-booking" %>
+                  <% end %>
+                </div>
+
+
+              <script>
+                const calculate = (pricePerTicket, ticketCount) => {
+                  if (isNaN(pricePerTicket) || isNaN(ticketCount)) {
+                    return total;
+                  }
+
+                  var total = pricePerTicket * ticketCount;
+                  updateTotalPrice(total);
+                }
+                function calculateTotalPrice(e){
+                  var pricePerTicket = parseFloat(document.getElementById("price_per_ticket").value)
+                  var ticketCountElement = e.target;
+                  var ticketCount = parseFloat(ticketCountElement.value)
+                  calculate(pricePerTicket, ticketCount)
+                }
+
+                function updateTotalPrice(total) {
+                  document.getElementById("display_total_price").textContent = total.toFixed(2);
+                }
+                document.addEventListener("DOMContentLoaded", function() {
+                  var ticketCountElement = document.getElementById("ticket_count");
+                  ticketCountElement.addEventListener("change", (e) => calculateTotalPrice(e));
+                });
+              </script>
