@@ -1,8 +1,11 @@
+<div class="events-count">
+  <% if @event_count > 0 %>
+    <h1><strong><%= pluralize(@event_count, "Event") %></strong> found for you </h1>
+  <% else %>
+    <h1>No events found.</h1>
+<% end %>
 
 
-
-<div>
-  <h1 class="indx">Events found for you</h1>
 </div>
 
 
@@ -20,12 +23,17 @@
                       <%= cl_image_tag event.photos.first.key, class: "event-img img-fluid rounded-top card-img" %>
                     <% end %>
 
+
+
                     <div class="card-img-overlay d-flex flex-column justify-content-end">
+
                       <h4 class="text-white"><%= event.name %></h4>
                       <h6 class="card-subtitle mb-2 text-white"><%= event.start_date.strftime("%d/%m/%y - %T") %></h6>
-
+                      <div class="price">
+                        <span>£<%= event.price %></span>
+                    </div>
                       <div class="link d-flex">
-                        <%= link_to "Read More", event_path(event), class: "card-link text-warning" %>
+                        <%= link_to "View Event", event_path(event), class: "card-link card-text" %>
                       </div>
                     </div>
                   </div>

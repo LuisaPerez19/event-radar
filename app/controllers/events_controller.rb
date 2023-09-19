@@ -20,6 +20,8 @@ class EventsController < ApplicationController
       info_window: render_to_string(partial: "popup", locals: {event: event})
     }
     end
+
+    @event_count = @events.count
   end
 
   def show
