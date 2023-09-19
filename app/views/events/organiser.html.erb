@@ -1,5 +1,5 @@
 <div class="container text-center py-5">
-  <h2 id="bookings-title">My Events</h2>
+<h2 id="bookings-title" class="indx" style="text-align: center; margin-left: 4px; color: white;">My Events</h2>
 
   <div class="container py-5">
     <% @events.each do |event| %>
@@ -28,9 +28,7 @@
     </div>
     <% end %>
   </div>
-
   <div class="mt-4">
-    <%= link_to "Homepage", root_path, class: "button-green" %>
-    <%= link_to "Back to list", events_path, class: "button-blue" %>
+   <%= link_to "Back", events_path, class: "button-blue", style: "margin-left: -1230px;" %>
   </div>
 </div>
