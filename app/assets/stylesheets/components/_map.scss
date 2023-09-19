@@ -1,0 +1,27 @@
+.mapboxgl-popup {
+  max-width: 50px;
+
+
+}
+
+
+
+.popup-content {
+  position: absolute;
+  background-blend-mode: 50%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  max-width: 600px;
+  max-height: fit-content;
+
+}
+
+
+.event-name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.event-location {
+  font-size: 10px;
+}

@@ -38,11 +38,17 @@ export default class extends Controller {
 
   addMarkersToMap(markers) {
     markers.forEach((marker) => {
-      new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(this.map);
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window) // Add this
+      new mapboxgl.Marker()
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup) // Add this
+      .addTo(this.map);
     });
   }
 
   addMarkerToMap(marker) {
-    new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(this.map);
+    new mapboxgl.Marker()
+    .setLngLat([marker.lng, marker.lat])
+    .addTo(this.map);
   }
 }
