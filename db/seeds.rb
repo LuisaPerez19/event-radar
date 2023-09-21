@@ -28,22 +28,29 @@ user1 = User.create!(
 )
 
 user2 = User.create!(
-  username: "Aqil",
+  username: "Aqil Imran",
   email: "Aqil@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user3 = User.create!(
-  username: "Aaron",
+  username: "Aaron Ayoubi",
   email: "Aaron@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
 
 user4 = User.create!(
-  username: "Zina",
+  username: "Zina Ivashko",
   email: "Zina@myevent.com",
+  password: "123456",
+  password_confirmation: "123456"
+)
+
+user5 = User.create!(
+  username: "London Events",
+  email: "London.events@myevent.com",
   password: "123456",
   password_confirmation: "123456"
 )
@@ -60,7 +67,7 @@ event1 = Event.new(
   location: "278 St Paul's Rd, London N1 2LH",
   start_date: DateTime.new(2023, 9, 30, 4, 10),
   end_date: DateTime.new(2023, 9, 30, 8, 10),
-  user: user1
+  user: user5
 )
 
 event1.photos.attach(io: indie_file, filename: "music.png", content_type: "image/png")
@@ -76,7 +83,7 @@ event2 = Event.new(
   start_date: DateTime.new(2023, 9, 30, 4, 10),
   end_date:DateTime.new(2023, 9, 30, 8, 10),
   location: "5 Panton St, London SW1Y 4DL",
-  user: user1
+  user: user5
 )
 event2.photos.attach(io: jazz_file, filename: "jazz.png", content_type: "image/png")
 event2.save!
@@ -91,7 +98,7 @@ event3 = Event.new(
   start_date: DateTime.new(2023, 9, 30, 4, 10),
   end_date:DateTime.new(2023, 9, 30, 8, 10),
   location:"4 St James's Mkt, St. James's, London SW1Y 4AH",
-  user: user1
+  user: user5
 )
 event3.photos.attach(io: rock_file, filename: "rock.jpg", content_type: "image/png")
 event3.save!
@@ -105,7 +112,7 @@ event4 = Event.new(
   location:"37 Charlotte St., London W1T 1RR",
   start_date: DateTime.new(2023, 10, 1, 4, 10),
   end_date:DateTime.new(2023, 10, 1, 8, 10),
-  user: user1
+  user: user5
 )
 event4.photos.attach(io: electronic_file, filename: "rock.png", content_type: "image/png")
 event4.save!
@@ -119,7 +126,7 @@ event5 = Event.new(
   location:"85 Piccadilly, London W1J 7NB",
   start_date: DateTime.new(2023, 10, 1, 4, 10),
   end_date:DateTime.new(2023, 10, 1, 8, 10),
-  user: user2
+  user: user5
 )
 event5.photos.attach(io: summer_file, filename: "summer-festival.png", content_type: "image/png")
 event5.save!
@@ -133,7 +140,7 @@ event6 = Event.new(
   location:"52 Wilton Way, London E8 1BG",
   start_date: DateTime.new(2023, 10, 1, 4, 10),
   end_date:DateTime.new(2023, 10, 1, 8, 10),
-  user: user2
+  user: user5
 )
 event6.photos.attach(io: stars_file, filename: "stars.png", content_type: "image/png")
 event6.save!
@@ -147,7 +154,7 @@ event7 = Event.new(
   location:"96 Charing Cross Rd, London WC2H 0JG",
   start_date: DateTime.new(2023, 9, 30, 8, 10),
   end_date:DateTime.new(2023, 9, 30, 12, 10),
-  user: user2
+  user: user5
 )
 event7.photos.attach(io: salsa_file, filename: "stars.png", content_type: "image/png")
 event7.save!
@@ -163,7 +170,7 @@ event7 = Event.new(
   location:"49 Columbia Rd, London E2 7RG",
   start_date: DateTime.new(2023, 9, 30, 8, 10),
   end_date:DateTime.new(2023, 9, 30, 12, 10),
-  user: user2
+  user: user5
 )
 event7.photos.attach(io: street_file, filename: "stars.png", content_type: "image/png")
 event7.save!
@@ -177,7 +184,7 @@ event8 = Event.new(
   location:"133 Victoria St, London SW1E 6RD",
   start_date: DateTime.new(2023, 9, 30, 8, 10),
   end_date:DateTime.new(2023, 9, 30, 12, 10),
-  user: user2
+  user: user5
 )
 event8.photos.attach(io: chocolate1_file, filename: "chocolate.png", content_type: "image/png")
 event8.save!
@@ -191,7 +198,7 @@ event9 = Event.new(
   location:"230B Dalston Ln, London E8 1LA",
   start_date: DateTime.new(2023, 9, 30, 8, 10),
   end_date:DateTime.new(2023, 9, 30, 12, 10),
-  user: user2
+  user: user5
 )
 event9.photos.attach(io: chocolate2_file, filename: "chocolate.png", content_type: "image/png")
 event9.save!
@@ -205,7 +212,7 @@ event10 = Event.new(
   location:"59 Ledbury Rd, London W11 2AA",
   start_date: DateTime.new(2023, 10, 1, 8, 10),
   end_date:DateTime.new(2023, 10, 1, 12, 10),
-  user: user2
+  user: user5
 )
 event10.photos.attach(io: chocolate3_file, filename: "chocolate.png", content_type: "image/png")
 event10.save!
