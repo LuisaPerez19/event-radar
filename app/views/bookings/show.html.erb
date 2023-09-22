@@ -1,15 +1,20 @@
- <div class="bookings-show-container">
-        <h1 class="booking-title">Booking Details</h1>
+ <div class="container col-mb-4 d-flex justify-content-center">
+ <div class="row col-md-4 align-text-center">
             <div class="card-bookings">
                 <p class="check"><i class="fa-regular fa-square-check booking-icons"></i></p>
-                <p class="card-text">Thank you for your order! </p>
+                 <h1>Booking Complete</h1>
+                <p class="card-text">Thank you, your paymant has been successful.
+                A confirmation email has been sent to <strong><%= current_user.email %></strong></p>
+                <br>
                   <p class="card-text">You're going to: </p>
                 <p class="card-text ename"><strong><%= @booking.event.name %></strong></p>
                 <p class="card-text"> <i class="fa-solid fa-calendar-days booking-icons"></i> Starts <%= @booking.event.start_date.strftime("%d/%m/%y - %T") %></p>
                 <p class="card-text"> <i class="fa-solid fa-calendar-days booking-icons"></i> Ends <%= @booking.event.end_date.strftime("%d/%m/%y - %T") %></p>
-                <p class="card-text">All details sent to: <%= current_user.email %></p>
-
+                <br>
+        <div class="buttons_bottom">
                 <%= link_to 'See all my bookings', bookings_path, class: "btn btn-primary btn-sm booking-button" %>
                 <%= link_to "Join Chat Group", event_chatroom_path(@booking.event, @booking.event.chatroom), class: "btn btn-primary btn-sm booking-button" %>
+        </div>
+        </div>
         </div>
     </div>
