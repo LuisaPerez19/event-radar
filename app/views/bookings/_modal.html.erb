@@ -1,9 +1,10 @@
+
 <div class="tickets">
-                <%# <h2>Billing info</h2> %>
+
                 <div class="elem-group inlined">
                   <label for="ticket_count">Tickets</label>
                   <input type="number" id="ticket_count" name="total_tickets" placeholder="1" min="1" value="1" >
-                </div>
+                 </div>
 
                 <div class="elem-group inlined">
                   <label for="price_per_ticket">Price per Ticket</label>
@@ -28,28 +29,21 @@
                   <% end %>
                 </div>
 
+                <script>
+                calculateTotalPrice();
 
-              <script>
-                const calculate = (pricePerTicket, ticketCount) => {
-                  if (isNaN(pricePerTicket) || isNaN(ticketCount)) {
-                    return total;
+                  function calculateTotalPrice() {
+                      var pricePerTicket = parseFloat(document.getElementById("price_per_ticket").value);
+                      var ticketCount = parseFloat(document.getElementById("ticket_count").value);
+                      var total = pricePerTicket * ticketCount;
+                      updateTotalPrice(total);
                   }
 
-                  var total = pricePerTicket * ticketCount;
-                  updateTotalPrice(total);
-                }
-                function calculateTotalPrice(e){
-                  var pricePerTicket = parseFloat(document.getElementById("price_per_ticket").value)
-                  var ticketCountElement = e.target;
-                  var ticketCount = parseFloat(ticketCountElement.value)
-                  calculate(pricePerTicket, ticketCount)
-                }
+                  function updateTotalPrice(total) {
+                      document.getElementById("display_total_price").textContent = total.toFixed(2);
+                  }
 
-                function updateTotalPrice(total) {
-                  document.getElementById("display_total_price").textContent = total.toFixed(2);
-                }
-                document.addEventListener("DOMContentLoaded", function() {
-                  var ticketCountElement = document.getElementById("ticket_count");
-                  ticketCountElement.addEventListener("change", (e) => calculateTotalPrice(e));
-                });
-              </script>
+                  document.getElementById("ticket_count").addEventListener("input", function () {
+                      calculateTotalPrice();
+                  });
+                </script>
