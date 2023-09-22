@@ -1,9 +1,64 @@
+
+<head>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+
 <div class="tickets">
                 <%# <h2>Billing info</h2> %>
+
+                <%# <script>
+                $(document).ready(function() {
+
+                  let x = $("#ticket_count").text();
+                   x = NaN;
+                  if (isNaN(x)) x = 0;
+                  // console.log(x);
+                  // plus button to increase by 1
+                $("#plus").click(function(){
+                  $("#ticket_count").text(++x);
+                });
+                //minus button to decrease by 1;
+                $("#minus").click(function(){
+                  $("#ticket_count").text(--x);
+                });
+                })
+
+                </script>
+
+                <style>
+                #ticket-count p {
+
+                  display: inline;
+                  font-weight: 300;
+                  padding: 35px;
+                  font-weight: bold;
+                }
+
+                button {
+                  width: 50px;
+                  height: 50px;
+                  background-color: #FEDFFF;
+                  color: black;
+                  font-size: 24px;
+                  border-radius: 6px;
+                }
+                </style>
+                <div>
+                 <button id="minus"> - </button>
+                <p id="ticket_count">1</p>
+                <button id="plus"> + </button>
+                 </div>
+ %>
+
+
+
+
+
+
                 <div class="elem-group inlined">
                   <label for="ticket_count">Tickets</label>
                   <input type="number" id="ticket_count" name="total_tickets" placeholder="1" min="1" value="1" >
-                </div>
+                 </div>
 
                 <div class="elem-group inlined">
                   <label for="price_per_ticket">Price per Ticket</label>
@@ -29,27 +84,23 @@
                 </div>
 
 
-              <script>
-                const calculate = (pricePerTicket, ticketCount) => {
-                  if (isNaN(pricePerTicket) || isNaN(ticketCount)) {
-                    return total;
-                  }
+ <script>
 
-                  var total = pricePerTicket * ticketCount;
-                  updateTotalPrice(total);
-                }
-                function calculateTotalPrice(e){
-                  var pricePerTicket = parseFloat(document.getElementById("price_per_ticket").value)
-                  var ticketCountElement = e.target;
-                  var ticketCount = parseFloat(ticketCountElement.value)
-                  calculate(pricePerTicket, ticketCount)
-                }
+        calculateTotalPrice();
 
-                function updateTotalPrice(total) {
-                  document.getElementById("display_total_price").textContent = total.toFixed(2);
-                }
-                document.addEventListener("DOMContentLoaded", function() {
-                  var ticketCountElement = document.getElementById("ticket_count");
-                  ticketCountElement.addEventListener("change", (e) => calculateTotalPrice(e));
-                });
-              </script>
+        function calculateTotalPrice() {
+            var pricePerTicket = parseFloat(document.getElementById("price_per_ticket").value);
+            var ticketCount = parseFloat(document.getElementById("ticket_count").value);
+            var total = pricePerTicket * ticketCount;
+            updateTotalPrice(total);
+        }
+
+        function updateTotalPrice(total) {
+            document.getElementById("display_total_price").textContent = total.toFixed(2);
+        }
+
+        // Listen for changes to the ticket count input and update the total price accordingly
+        document.getElementById("ticket_count").addEventListener("input", function () {
+            calculateTotalPrice();
+        });
+    </script>
