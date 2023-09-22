@@ -10,8 +10,6 @@
 }
 
 
-
-
 .elem-group.inlined {
   width: 49%;
   display: inline-block;
@@ -22,19 +20,12 @@
 
 label {
   display: block;
-  font-family: 'Nanum Gothic';
-  padding-bottom: 10px;
-  font-size: 1.25em;
 }
 
 
 input, select, textarea {
   border-radius: 2px;
-  // border: 2px solid #777;
   box-sizing: border-box;
-  font-size: 1.25em;
-  font-family: 'Nanum Gothic';
-  // width: 100%;
   padding: 10px;
 }
 
@@ -45,7 +36,6 @@ input, select, textarea {
   background-color: rgb(234, 228, 228);
 
 }
-
 
 textarea {
   height: 250px;
