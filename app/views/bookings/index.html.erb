@@ -18,8 +18,14 @@
               <div class="white-box" style="margin-top: 20px;">
                 <p class="custom-card-title" style="font-weight: bold;">Event: <%= booking.event.name %></p>
                 <p class="custom-card-text">Price: £<%= booking.event.price %></p>
-                <p class="custom-card-text">Start Date: <%= booking.event.start_date.strftime("%Y-%m-%d %H:%M:%S") %></p>
-                <p class="custom-card-text">End Date: <%= booking.event.end_date.strftime("%Y-%m-%d %H:%M:%S") %></p>
+            
+        <p class="custom-card-text">Start Date: <%= booking.event.start_date.strftime("%d/%m/%y - %T") %> PM</p>
+        <p class="custom-card-text">End Date: <%= booking.event.end_date.strftime("%d/%m/%y - %T") %> PM</p>
+
+
+
+
+
               </div>
             </div>
           </div>
