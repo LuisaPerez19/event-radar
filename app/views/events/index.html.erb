@@ -28,7 +28,8 @@
                     <div class="card-img-overlay d-flex flex-column justify-content-end">
 
                       <h4 class="text-white"><%= event.name %></h4>
-                      <h6 class="card-subtitle mb-2 text-white"><%= event.start_date.strftime("%d/%m/%y - %T") %></h6>
+                    <h6 class="card-subtitle mb-2 text-white"><%= event.start_date.strftime("%d/%m/%y - %T") %> PM</h6>
+
                       <div class="price">
                         <span>£<%= event.price %></span>
                     </div>
