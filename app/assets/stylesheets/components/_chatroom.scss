@@ -57,21 +57,6 @@ h2{
   color: white;
 }
 
-// ::-webkit-scrollbar-track{
-//   background-color: transparent;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   background-color: #9A607A;
-//   border-radius: 20px;
-//   border: 6px solid transparent;
-//   background-clip: content-box;
-// }
-
-// ::-webkit-scrollbar-thumb:hover {
-//   background-color: #9A607A;
-// }
-
 
 #new_message {
   border-top: 1px solid $gray-200;
@@ -83,9 +68,6 @@ h2{
 }
 }
 
-// .purple-background{
-//   background-color: #9A607A !important;
-// }
 
 .chat-photo{
   height: 400px;
@@ -160,4 +142,8 @@ h2{
 .members-box{
   margin-left: 25px;
   margin-top: 50px;
+}
+
+.chat-button{
+  width: 80px;
 }
