@@ -1,15 +1,25 @@
- <div class="bookings-show-container">
-        <h1 class="booking-title">Booking Details</h1>
+<div class="container col-mb-4 d-flex justify-content-center">
+ <div class="row col-md-4 align-text-center">
             <div class="card-bookings">
-                <p class="check"><i class="fa-regular fa-square-check booking-icons"></i></p>
-                <p class="card-text">Thank you for your order! </p>
+            <div class="wrapper"> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/> <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            </div>
+                <%# <p class="check"><i class="fa-regular fa-square-check booking-icons"></i></p> %>
+                 <h1>Booking Complete</h1>
+                <p class="card-text">Thank you, your payment has been successful.
+                A confirmation email has been sent to <strong><%= current_user.email %></strong></p>
+                <br>
                   <p class="card-text">You're going to: </p>
                 <p class="card-text ename"><strong><%= @booking.event.name %></strong></p>
+                  <div class="hr"><hr style="width: 100px; margin:auto; padding: 16px"></div>
                 <p class="card-text"> <i class="fa-solid fa-calendar-days booking-icons"></i> Starts <%= @booking.event.start_date.strftime("%d/%m/%y - %T") %></p>
                 <p class="card-text"> <i class="fa-solid fa-calendar-days booking-icons"></i> Ends <%= @booking.event.end_date.strftime("%d/%m/%y - %T") %></p>
-                <p class="card-text">All details sent to: <%= current_user.email %></p>
-
+               <%# <p>total price <script>calculateTotalPrice();</script> </p> %>
+                <br>
+        <div class="buttons_bottom">
                 <%= link_to 'See all my bookings', bookings_path, class: "btn btn-primary btn-sm booking-button" %>
                 <%= link_to "Join Chat Group", event_chatroom_path(@booking.event, @booking.event.chatroom), class: "btn btn-primary btn-sm booking-button" %>
+        </div>
+        </div>
         </div>
     </div>

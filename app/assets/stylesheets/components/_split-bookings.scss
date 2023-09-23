@@ -26,6 +26,8 @@ label {
 input, select, textarea {
   border-radius: 2px;
   box-sizing: border-box;
+  font-size: 1.25em;
+  width: 100%;
   padding: 10px;
 }
 
@@ -40,3 +42,13 @@ input, select, textarea {
 textarea {
   height: 250px;
 }
+
+
+// body {
+//   padding: 5em;
+//   text-align: center;
+// }
+
+// h1 {
+//   margin-bottom: 1em;
+// }

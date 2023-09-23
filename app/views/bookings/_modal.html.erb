@@ -21,7 +21,7 @@
                 </div>
               </div>
 
-                <div style="margin-top: 20px">
+                <div id="toggle" style="margin-top: 20px">
                   <%= simple_form_for [@event, @booking] do |f| %>
                     <%= f.hidden_field :user_id, value: current_user.id  %>
                     <%= f.hidden_field :event_id, value: @event.id %>
