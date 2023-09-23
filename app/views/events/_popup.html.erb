@@ -1,4 +1,13 @@
 <div class="popup-content">
-  <h1 class="event-name"><%= event.name %></h1>
-  <h1 class="event-location"><%= event.location %></h1>
+<%= link_to event_path(event), class: "text-decoration-none" do %>
+                  <div class="card slider-card">
+                    <% if event.photos.attached? %>
+                      <%= cl_image_tag event.photos.first.key, class: "map-event-img" %>
+                    <% end %>
+
+                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                      <h4 class="text-name"><%= event.name %></h4>
+                      <h4 class="text-location"><%= event.location %></h4>
+</div>
+<% end %>
 </div>

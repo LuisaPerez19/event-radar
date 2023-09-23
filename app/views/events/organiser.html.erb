@@ -16,9 +16,9 @@
         <div class="col-md-6">
           <div class="card-body custom-card-body">
             <p class="custom-card-title"><strong>Event: <%= event.name %></strong></p>
-            <p class="custom-card-text">Price: £<%= event.price %>/day</p>
-            <p class="custom-card-text">Start Date: <%= event.start_date %></p>
-            <p class="custom-card-text">End Date: <%= event.end_date %></p>
+            <p class="custom-card-text">Price: £<%= event.price %></p>
+           <p class="custom-card-text">Start Date: <%= event.start_date.strftime("%d-%m-%y") %></p>
+            <p class="custom-card-text">End Date: <%= event.end_date.strftime("%d-%m-%y") %></p>
             <%= link_to "Edit", edit_event_path(event), class: "button-green" %>
             <%= link_to "Delete", event_path(event), class: "button-green",
               data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
@@ -28,7 +28,12 @@
     </div>
     <% end %>
   </div>
-  <div class="mt-4">
-   <%= link_to "Back", events_path, class: "button-blue", style: "margin-left: -1230px;" %>
-  </div>
+ <div style="position: relative;"> <!-- Add a relative position container -->
+ <div class="mt-4" style="position: absolute; bottom: 0; left: 0; margin: 10px;"> <!-- Adjust margin as needed -->
+  <%= link_to "Back", events_path, class: "button-blue" %>
 </div>
+
+</div>
+
+
+

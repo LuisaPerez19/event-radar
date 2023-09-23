@@ -1,27 +1,40 @@
 <div class="container text-center py-5">
-  <h2 id="bookings-title">Bookings & Event</h2>
+  <h2 id="bookings-title" style="color: white;">Bookings & Event</h2>
 
   <div class="row justify-content-start">
     <% @bookings.each do |booking| %>
-    <div class="col-md-6">
-      <div class="card mt-4">
-        <%= link_to event_path(booking.event) do %>
-          <%= cl_image_tag booking.event.photos.first.key, width: 296, crop: :fill, class: "event-img img-fluid" %>
-        <% end %>
+      <div class="col-md-12 mt-4"> <!-- Each booking will take the full width on medium screens and larger -->
+        <div class="card">
+          <div class="row">
+            <div class="col-md-6">
+              <%= link_to event_path(booking.event), class: "text-decoration-none" do %>
+                <div class="image-container" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px;"> <!-- Adjust the margin values as needed -->
+                  <%= cl_image_tag booking.event.photos.first.key, width: 296, crop: :fill, class: "event-img img-fluid" %>
+                </div>
+              <% end %>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="white-box" style="margin-top: 20px;">
+                <p class="custom-card-title" style="font-weight: bold;">Event: <%= booking.event.name %></p>
+                <p class="custom-card-text">Price: £<%= booking.event.price %></p>
+            
+        <p class="custom-card-text">Start Date: <%= booking.event.start_date.strftime("%d/%m/%y - %T") %> PM</p>
+        <p class="custom-card-text">End Date: <%= booking.event.end_date.strftime("%d/%m/%y - %T") %> PM</p>
 
-        <div class="card-body custom-card-body">
-  <p class="custom-card-title"><strong>Event: <%= booking.event.name %></strong></p>
-  <p class="custom-card-text">Price: £<%= booking.event.price %>/day</p>
-  <p class="custom-card-text">Start Date: <%= booking.event.start_date %></p>
-  <p class="custom-card-text">End Date: <%= booking.event.end_date %></p>
-</div>
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
 
   <div class="mt-4">
-    <%= link_to "Homepage", root_path, class: "button-green" %>
-    <%= link_to "Back to list", events_path, class: "button-blue" %>
+    <%= link_to "Back", events_path, class: "button-blue" %>
   </div>
 </div>
