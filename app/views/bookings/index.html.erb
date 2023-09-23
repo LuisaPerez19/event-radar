@@ -1,31 +1,29 @@
-<div class="container text-center py-5">
-  <h2 id="bookings-title" style="color: white;">Bookings & Event</h2>
-
-  <div class="row justify-content-start">
+<div class="container mb-4">
+  <div class="row justify-content-center">
+    <div class="col-md-12 text-center" style="margin-top: 20px;"> <!-- Add margin-top -->
+      <h2 id="bookings-title" style="color: white;">Bookings & Event</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center">
     <% @bookings.each do |booking| %>
-      <div class="col-md-12 mt-4"> <!-- Each booking will take the full width on medium screens and larger -->
-        <div class="card">
+      <div class="col-md-10 mt-4"> <!-- Each booking will take the full width on medium screens and larger -->
+        <div class="card mt-8">
           <div class="row">
             <div class="col-md-6">
               <%= link_to event_path(booking.event), class: "text-decoration-none" do %>
                 <div class="image-container" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px;"> <!-- Adjust the margin values as needed -->
-                  <%= cl_image_tag booking.event.photos.first.key, width: 296, crop: :fill, class: "event-img img-fluid" %>
+                  <%= cl_image_tag booking.event.photos.first.key, width: 220, crop: :fill, class: "event-img img-fluid" %>
+
                 </div>
               <% end %>
             </div>
-            
-            <div class="col-md-6">
-              <div class="white-box" style="margin-top: 20px;">
+
+            <div class="col-md-4"> 
+              <div class="white-box mybookingsbox"  style="margin-top: 80px; 
                 <p class="custom-card-title" style="font-weight: bold;">Event: <%= booking.event.name %></p>
                 <p class="custom-card-text">Price: £<%= booking.event.price %></p>
-            
-        <p class="custom-card-text">Start Date: <%= booking.event.start_date.strftime("%d/%m/%y - %T") %> PM</p>
-        <p class="custom-card-text">End Date: <%= booking.event.end_date.strftime("%d/%m/%y - %T") %> PM</p>
-
-
-
-
-
+                <p class="custom-card-text">Start Date: <%= booking.event.start_date.strftime("%d/%m/%y - %T") %> PM</p>
+                <p class="custom-card-text">End Date: <%= booking.event.end_date.strftime("%d/%m/%y - %T") %> PM</p>
               </div>
             </div>
           </div>
