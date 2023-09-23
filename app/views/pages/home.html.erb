@@ -3,27 +3,32 @@
   <img src="/assets/event_logo2-a3d339e7617ddf1698af07a66eb925a4cbf69de5238e9ce2a7068d1c1384dca6.png" alt="Logo" style="position: absolute; top: 20px; left: 20px; width: 40px; height: 40px;">
 
   <div class="search-area" style="position: absolute; bottom: 0; left: 0; width: 100%; background-color: transparent; padding: 220px;">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-sm-8 my-3">
-          <h1><strong>FIND YOUR SPECIAL EVENT</strong></h1>
+    <div class="container" style="top: 20px;">
+      <div class="row justify-content-center" style="margin-bottom: 30%;">
+        <div class="col-sm-8">
+        <div>
+          <h1 style="text-align:center"><strong>Discover, book, and immerse yourself in Live Events and more!</strong></h1>
+        </div>
           <br>
+        <div class="search-bar">
           <%= form_tag events_path, method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
                   params[:query],
                   class: "form-control",
-                  placeholder: "Find an event"
+                  placeholder: "Music, food, jazz.."
             %>
-<div style="width: 40px;"></div>
+            <div style="width: 40px;"></div>
             <input type="date"
-                 id="date"
-                 name="start_date"
-                 class="form-control"
-                 value="<%= params[:start_date] %>"
-                 placeholder="Select a Date"
+                id="date"
+                name="start_date"
+                class="form-control"
+                value="<%= params[:start_date] %>"
+                placeholder="Select a Date"
             >
             <%= submit_tag "Search", class: "btn btn-primary" %>
           <% end %>
+        </div>
+
         </div>
       </div>
     </div>
