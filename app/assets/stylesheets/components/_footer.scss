@@ -1,11 +1,5 @@
 /* styles.css */
 footer {
-  position: fixed;
-  z-index: 10;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-
   text-align: center;
   padding: 20px 0;
 }
@@ -41,12 +35,10 @@ footer {
   margin: 10px 130px;
 }
 
-.footer-info{
+.footer-info {
   margin-top: 10px;
   justify-content: center;
 }
-
-
 
 .social-icons a {
   text-decoration: none;
@@ -58,6 +50,6 @@ footer {
 }
 
 .social-icons a:hover {
-  color: #2B232E;
+  color: #2b232e;
   transform: translateY(-5px);
 }
