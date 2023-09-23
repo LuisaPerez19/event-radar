@@ -275,7 +275,7 @@ event14 = Event.new(
 event14.photos.attach(io: Ukraine_foodevent, filename: "Ukraine_foodevent.png", content_type: "image/png")
 event14.save!
 
-Afghan_food = URI.open("https://afghancooks.com/wp-content/uploads/2021/09/IMG_0858_jpg.jpg")
+Afghan_food = URI.open("https://www.newsday.com/_next/image?url=https%3A%2F%2Fcdn.newsday.com%2Fimage-service%2Fversion%2Fc%3AOWY5NTFjYzctMjZiNi00%3AMjI0MmJm%2Ffdmafghan230129_photos.jpg%3Ff%3DLandscape%2B16%253A9%26w%3D1200%26q%3D1&w=3840&q=80")
 event15 = Event.new(
   name: "Aghan Food Event",
   description: "Savor the authentic tastes of Afghanistan at our food event, where the aromatic spices and flavors of Afghan cuisine transport you to the heart of the Silk Road. Indulge in delectable kebabs, flavorful rice dishes, and mouthwatering desserts for a culinary journey like no other.",
