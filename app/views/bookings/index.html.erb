@@ -11,15 +11,13 @@
           <div class="row">
             <div class="col-md-6">
               <%= link_to event_path(booking.event), class: "text-decoration-none" do %>
-                <div class="image-container" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px;"> <!-- Adjust the margin values as needed -->
+                <div class="image-container"> <!-- Adjust the margin values as needed -->
                   <%= cl_image_tag booking.event.photos.first.key, width: 220, crop: :fill, class: "event-img img-fluid" %>
-
                 </div>
               <% end %>
             </div>
-
-            <div class="col-md-4"> 
-              <div class="white-box mybookingsbox"  style="margin-top: 80px; 
+            <div class="col-md-5">
+              <div class="white-box mybookingsbox"  style="margin-top: 80px; justify-content: space-between; margin-left: 80px;">
                 <p class="custom-card-title" style="font-weight: bold;">Event: <%= booking.event.name %></p>
                 <p class="custom-card-text">Price: £<%= booking.event.price %></p>
                 <p class="custom-card-text">Start Date: <%= booking.event.start_date.strftime("%d/%m/%y - %T") %> PM</p>
@@ -31,7 +29,6 @@
       </div>
     <% end %>
   </div>
-
   <div class="mt-4">
     <%= link_to "Back", events_path, class: "button-blue" %>
   </div>
