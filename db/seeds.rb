@@ -65,8 +65,8 @@ event1 = Event.new(
   price: 12,
   category: "Music",
   location: "278 St Paul's Rd, London N1 2LH",
-  start_date: DateTime.new(2023, 9, 30, 4, 10),
-  end_date: DateTime.new(2023, 9, 30, 8, 10),
+  start_date: DateTime.new(2023, 9, 30, 18, 10),
+  end_date: DateTime.new(2023, 9, 30, 22, 10),
   user: user5
 )
 
@@ -80,8 +80,8 @@ event2 = Event.new(
   description: "Elevate your senses at Jazz on the Rooftop, where the city skyline becomes the backdrop to an evening of smooth jazz and sophistication. Set atop a stylish skyscraper, this event offers live jazz bands, artisanal cocktails, and breathtaking views. Immerse yourself in the timeless tunes that evoke the golden era of jazz while savoring the city's ambiance",
   price: 10,
   category: "Music",
-  start_date: DateTime.new(2023, 9, 30, 4, 10),
-  end_date:DateTime.new(2023, 9, 30, 8, 10),
+  start_date: DateTime.new(2023, 9, 30, 17, 10),
+  end_date:DateTime.new(2023, 9, 30, 23, 10),
   location: "5 Panton St, London SW1Y 4DL",
   user: user5
 )
@@ -95,8 +95,8 @@ event3 = Event.new(
   description: "Step back in time and relive the glory days of rock 'n' roll at the Rockin Retro Revival. This nostalgic event transports you to a vintage-style venue adorned with retro decor and classic rock memorabilia. Enjoy electrifying live performances by tribute bands, capturing the essence of legendary rock icons from the 60s and 70s, and let the music transport you to a bygone era of rebellion and rockstar glamour",
   price: 10,
   category: "music",
-  start_date: DateTime.new(2023, 9, 30, 4, 10),
-  end_date:DateTime.new(2023, 9, 30, 8, 10),
+  start_date: DateTime.new(2023, 9, 30, 20, 10),
+  end_date:DateTime.new(2023, 10, 1, 03, 10),
   location:"4 St James's Mkt, St. James's, London SW1Y 4AH",
   user: user5
 )
@@ -110,8 +110,8 @@ event4 = Event.new(
   price: 10,
   category: "music",
   location:"37 Charlotte St., London W1T 1RR",
-  start_date: DateTime.new(2023, 10, 1, 4, 10),
-  end_date:DateTime.new(2023, 10, 1, 8, 10),
+  start_date: DateTime.new(2023, 10, 1, 16, 10),
+  end_date:DateTime.new(2023, 10, 1, 22, 10),
   user: user5
 )
 event4.photos.attach(io: electronic_file, filename: "rock.png", content_type: "image/png")
@@ -124,8 +124,8 @@ event5 = Event.new(
   price: 50,
   category: "music",
   location:"85 Piccadilly, London W1J 7NB",
-  start_date: DateTime.new(2023, 10, 1, 4, 10),
-  end_date:DateTime.new(2023, 10, 1, 8, 10),
+  start_date: DateTime.new(2023, 10, 1, 16, 10),
+  end_date:DateTime.new(2023, 10, 1, 22, 10),
   user: user5
 )
 event5.photos.attach(io: summer_file, filename: "summer-festival.png", content_type: "image/png")
@@ -138,8 +138,8 @@ event6 = Event.new(
   price: 50,
   category: "music",
   location:"52 Wilton Way, London E8 1BG",
-  start_date: DateTime.new(2023, 10, 1, 4, 10),
-  end_date:DateTime.new(2023, 10, 1, 8, 10),
+  start_date: DateTime.new(2023, 10, 1, 19, 10),
+  end_date:DateTime.new(2023, 10, 1, 23, 10),
   user: user5
 )
 event6.photos.attach(io: stars_file, filename: "stars.png", content_type: "image/png")
@@ -152,8 +152,8 @@ event7 = Event.new(
   price: 50,
   category: "music",
   location:"96 Charing Cross Rd, London WC2H 0JG",
-  start_date: DateTime.new(2023, 9, 30, 8, 10),
-  end_date:DateTime.new(2023, 9, 30, 12, 10),
+  start_date: DateTime.new(2023, 9, 30, 17, 10),
+  end_date:DateTime.new(2023, 9, 30, 22, 10),
   user: user5
 )
 event7.photos.attach(io: salsa_file, filename: "stars.png", content_type: "image/png")
@@ -239,7 +239,7 @@ event12 = Event.new(
   category: "music",
   location:" 154 st pauls close , London W5 3JZ",
   start_date: DateTime.new(2023, 10, 1, 7, 10),
-  end_date:DateTime.new(2023, 10, 1, 9, 10),
+  end_date:DateTime.new(2023, 10, 1, 11, 10),
   user: user5
 )
 event12.photos.attach(io: Techno_music, filename: "techno-music-eve.png", content_type: "image/png")
@@ -277,7 +277,7 @@ event14.save!
 
 Afghan_food = URI.open("https://www.newsday.com/_next/image?url=https%3A%2F%2Fcdn.newsday.com%2Fimage-service%2Fversion%2Fc%3AOWY5NTFjYzctMjZiNi00%3AMjI0MmJm%2Ffdmafghan230129_photos.jpg%3Ff%3DLandscape%2B16%253A9%26w%3D1200%26q%3D1&w=3840&q=80")
 event15 = Event.new(
-  name: "Aghan Food Event",
+  name: "Afghan Food Event",
   description: "Savor the authentic tastes of Afghanistan at our food event, where the aromatic spices and flavors of Afghan cuisine transport you to the heart of the Silk Road. Indulge in delectable kebabs, flavorful rice dishes, and mouthwatering desserts for a culinary journey like no other.",
   price: 30,
   category: "food",
