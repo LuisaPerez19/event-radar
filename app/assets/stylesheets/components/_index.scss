@@ -14,6 +14,15 @@
 @import "./map";
 @import "./mybookingsbox";
 
-body {
-  background-color: #2b232e;
+
+html{
+  min-height: 100vh;
+}
+
+body{
+  background-color: #2B232E;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
 }
