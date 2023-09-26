@@ -1,26 +1,26 @@
-.event-img{
+.event-img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   object-position: center;
 }
 
-.events-count{
-  margin-left:600px ;
-  color:#FEDFFF;
+.events-count {
+  margin-left: 600px;
+  color: #fedfff;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.t-color{
-  color: #8251CA;
+.t-color {
+  color: #8251ca;
 }
 
-.card-text{
-  color: #FEDFFF;
+.card-text {
+  color: #fedfff;
 }
 
-.slider-card{
+.slider-card {
   position: relative;
 }
 // .slider{
@@ -31,20 +31,16 @@
 //   position: relative;
 // }
 
-
-
 // .slider-card:last-child{
 //   margin-left: 35px;
 // }
-
-
 
 // .col-md-4{
 //   margin-right: -40px;
 // }
 
-.price{
-  background-color:#C069EC;
+.price {
+  background-color: #c069ec;
   display: flex;
   color: white;
   position: absolute;
@@ -61,11 +57,11 @@
 //   box-shadow: 5px 5px 20px rgba(150, 150, 150, 0.4);
 // }
 
-.price span{
+.price span {
   margin-left: 10px;
 }
 
-.div2{
+.div2 {
   margin-top: 40px;
   margin-left: 100px;
   margin-bottom: 30px;
@@ -75,11 +71,10 @@
 }
 
 .carousel-control-prev {
-
 }
 
 .carousel-control-prev-icon {
-  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23BF40BF' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23BF40BF' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
 
 .carousel-control-next-icon {
@@ -91,12 +86,8 @@
 }
 
 .card-img-overlay {
-
   background-color: rgba(#000, 0.4);
-
 }
-
-
 
 /* Custom CSS for the description area */
 .custom-card-body {
@@ -115,4 +106,10 @@
 .custom-card-text {
   font-size: 16px; /* Adjust font size for text */
   margin-bottom: 5px; /* Add spacing between text elements */
+}
+
+.image-container {
+  border: 2px solid #fedfff;
+  overflow: hidden;
+  margin-bottom: 0; /* Remove the margin between card containers */
 }

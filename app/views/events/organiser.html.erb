@@ -1,39 +1,41 @@
-<div class="container text-center py-5">
-<h2 id="bookings-title" class="indx" style="text-align: center; margin-left: 4px; color: white;">My Events</h2>
-
-  <div class="container py-5">
+<div class="container mb-4">
+  <div class="row justify-content-center">
+    <div class="col-md-12 text-center" style="margin-top: 20px;">
+      <h2 id="bookings-title" style="color: white;">My Events</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center">
     <% @events.each do |event| %>
-    <div class="card mt-4">
-      <div class="row">
-        <div class="col-md-6">
-          <%= link_to event_path(event), class: "text-decoration-none" do %>
-            <% if event.photos.attached? %>
-              <%= cl_image_tag event.photos.first.key, width: 296, crop: :fill, class: "event-img img-fluid" %>
-            <% end %>
-          <% end %>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card-body custom-card-body">
-            <p class="custom-card-title"><strong>Event: <%= event.name %></strong></p>
-            <p class="custom-card-text">Price: £<%= event.price %></p>
-           <p class="custom-card-text">Start Date: <%= event.start_date.strftime("%d-%m-%y") %></p>
-            <p class="custom-card-text">End Date: <%= event.end_date.strftime("%d-%m-%y") %></p>
-            <%= link_to "Edit", edit_event_path(event), class: "button-green" %>
-            <%= link_to "Delete", event_path(event), class: "button-green",
-              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <div class="col-md-10 mt-4">
+        <div class="card mt-8">
+          <div class="row">
+            <div class="col-md-6">
+              <%= link_to event_path(event), class: "text-decoration-none" do %>
+                <div class="image-container">
+                  <%= cl_image_tag event.photos.first.key, width: "100%", height: "300px;", class: "card-img-top" %>
+                </div>
+              <% end %>
+            </div>
+            <div class="col-md-5">
+              <div class="white-box mybookingsbox" style="margin-top: 80px; justify-content: space-between; margin-left: 80px;">
+                <p class="custom-card-title" style="font-weight: bold;">Event: <%= event.name %></p>
+                <p class="custom-card-text">Price: £<%= event.price %></p>
+                <p class="custom-card-text">Start Date: <%= event.start_date.strftime("%d/%m/%y - %T") %> PM</p>
+                <p class="custom-card-text">End Date: <%= event.end_date.strftime("%d/%m/%y - %T") %> PM</p>
+                <div>
+                  <%= link_to "Edit", edit_event_path(event), class: "button-green" %>
+                  <%= link_to "Delete", event_path(event), class: "button-green",
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <% end %>
   </div>
- <div style="position: relative;"> <!-- Add a relative position container -->
- <div class="mt-4" style="position: absolute; bottom: 0; left: 0; margin: 10px;"> <!-- Adjust margin as needed -->
-  <%= link_to "Back", events_path, class: "button-blue" %>
+  <div class="mt-4">
+    <%= link_to "Back", events_path, class: "button-blue" %>
+  </div>
 </div>
-
-</div>
-
-
-
+<br>
