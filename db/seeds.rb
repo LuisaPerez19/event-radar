@@ -340,7 +340,7 @@ event19 = Event.new(
   description: "Join us for an engaging physical education workshop where you'll learn the importance of fitness and well-being. Participate in fun activities and exercises.",
   price: 15,
   category: "physical education",
-  location: "Buckingham Palace, Westminster, London SW1A 1AA, United Kingdom",
+  location: "Buckingham Palace, Westminster, London SW1A 1AA",
   start_date: DateTime.new(2023, 10, 1, 10, 0),
   end_date: DateTime.new(2023, 10, 1, 14, 0),
   user: user5
@@ -356,7 +356,7 @@ event21 = Event.new(
   description: "Explore the fascinating world of physics at our symposium. Engage in discussions on quantum mechanics, relativity, and the latest advancements in the field.",
   price: 25,
   category: "education",
-  location: " Covent Garden, London WC2E 9DD, United Kingdom",
+  location: " Covent Garden, London WC2E 9DD",
   start_date: DateTime.new(2023, 10, 1, 13, 0),
   end_date: DateTime.new(2023, 10, 1, 18, 0),
   user: user5
@@ -371,7 +371,7 @@ event22 = Event.new(
   description: "Join our intensive coding bootcamp and accelerate your programming skills. Learn to build web applications from scratch in just two weeks.",
   price: 30,
   category: "education",
-  location: "British Museum, Great Russell St, London WC1B 3DG, United Kingdom",
+  location: "British Museum, Great Russell St, London WC1B 3DG",
   start_date: DateTime.new(2023, 10, 1, 9, 0),
   end_date: DateTime.new(2023, 10, 1, 17, 0),
   user: user5
@@ -386,7 +386,7 @@ event23 = Event.new(
   description: "Inspire young minds with our interactive math workshop designed for kids. Make learning math fun and engaging for your child!",
   price: 18,
   category: "education",
-  location: "Tower Bridge, Tower Bridge Rd, London SE1 2UP, United Kingdom",
+  location: "Tower Bridge, Tower Bridge Rd, London SE1 2UP",
   start_date: DateTime.new(2023, 10, 1, 14, 0),
   end_date: DateTime.new(2023, 10, 1, 16, 0),
   user: user5
@@ -401,7 +401,7 @@ event24 = Event.new(
   description: "Stargazing enthusiasts, join us for an enchanting night of astronomy. Discover the cosmos, observe celestial objects, and learn about the universe.",
   price: 12,
   category: "education",
-  location: "Westminster Abbey, 20 Deans Yd, Westminster, London SW1P 3PA, United Kingdom",
+  location: "20 Dean's Yard, Westminster, London SW1P 3PA",
   start_date: DateTime.new(2023, 10, 1, 20, 0),
   end_date: DateTime.new(2023, 10, 1, 23, 0),
   user: user5
@@ -416,7 +416,7 @@ event26 = Event.new(
   description: "Step back in time and immerse yourself in our captivating history event, where the past comes to life through reenactments, artifacts, and immersive experiences. Join us on a journey through the annals of history",
   price: 12,
   category: "education",
-  location: "United Kingdom House, 180 Oxford St, London W1D 1NT",
+  location: "164-182 Oxford Street, London W1D 1NN",
   start_date: DateTime.new(2023, 10, 1, 20, 0),
   end_date: DateTime.new(2023, 10, 1, 23, 0),
   user: user5
